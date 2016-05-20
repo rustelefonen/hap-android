@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/clock_card"
+            style="@style/AppTheme.CardViewStyle"
+            app:cardElevation="@dimen/standard_card_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/content_inset"
+                android:paddingBottom="@dimen/content_inset">
+
+                <no.rustelefonen.hap.customviews.LazyTextView
+                    android:id="@+id/clock_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/program_started_clock_label"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:textSize="@dimen/standard_text_label" />
+
+                <no.rustelefonen.hap.customviews.clock.ClockView
+                    android:id="@+id/clock_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="@dimen/content_inset"
+                    android:layout_marginRight="@dimen/content_inset_half"
+                    android:layout_marginLeft="@dimen/content_inset_half"
+
+                    app:number_label_text_color="@color/primarytext"
+                    app:number_label_text_size="@dimen/clockview_number_text_size"
+                    app:number_label_font_family="@string/clock_number_font"
+                    app:unit_label_text_size="@dimen/clockview_unit_text_size"
+                    app:unit_label_font_family="@string/clock_unit_font"
+
+                    app:unit_days_plural_text="dager"
+                    app:unit_minutes_plural_text="minutter"
+                    app:unit_hours_plural_text="timer"
+                    app:unit_days_singular_text="dag"
+                    app:unit_minutes_singular_text="minutt"
+                    app:unit_hours_singular_text="time" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/savings_calculator_card"
+            android:layout_below="@id/clock_card"
+            style="@style/AppTheme.CardViewStyle">
+
+            <no.rustelefonen.hap.customviews.LazyTextView
+                android:id="@+id/money_saved_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="@dimen/standard_text_label"
+                android:padding="12dp"
+                android:text="@string/price_calculator_not_started"
+                android:layout_below="@+id/clock_view"
+                android:clickable="true"
+                android:textColor="#007AFF"
+                android:foreground="?android:selectableItemBackground"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/daily_subject_card"
+            style="@style/AppTheme.CardViewStyle"
+            android:layout_below="@id/savings_calculator_card"
+            android:layout_marginBottom="@dimen/content_inset_half">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_inset"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/daily_subject_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/daily_theme_string"
+                    android:textColor="@color/primarytext"
+                    android:textSize="@dimen/large_text_size"
+                    android:fontFamily="@string/daily_subject_header_font" />
+
+                <no.rustelefonen.hap.customviews.LazyTextView
+                    android:id="@+id/daily_subject_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/content_inset_half"
+                    android:text=""
+                    android:textSize="@dimen/text_label_size"
+                    android:fontFamily="@string/daily_subject_text_font" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

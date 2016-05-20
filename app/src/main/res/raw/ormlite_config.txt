@@ -1,0 +1,162 @@
+#
+# generated on 2016/05/06 10:18:49
+#
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.Achievement
+tableName=achievement
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=ACHIEVEMENT_ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=title
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=type
+columnName=ACHIEVEMENT_TYPE
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=pointsRequired
+# --field-end--
+# --field-start--
+fieldName=description
+canBeNull=false
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.Category
+tableName=category
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=CATEGORY_ID
+generatedId=true
+allowGeneratedIdInsert=true
+# --field-end--
+# --field-start--
+fieldName=title
+columnName=CATEGORY_TITLE
+# --field-end--
+# --field-start--
+fieldName=orderNumber
+columnName=CATEGORY_ORDER
+# --field-end--
+# --field-start--
+fieldName=versionNumber
+columnName=CATEGORY_VERSION
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.Info
+tableName=info
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=INFO_ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=category
+columnName=INFO_CATEGORY_ID
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=title
+columnName=INFO_TITLE
+# --field-end--
+# --field-start--
+fieldName=htmlContent
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.User
+tableName=user
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=USER_ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=age
+# --field-end--
+# --field-start--
+fieldName=gender
+# --field-end--
+# --field-start--
+fieldName=secondsLastedBeforeLastReset
+# --field-end--
+# --field-start--
+fieldName=moneySpentPerDayOnHash
+# --field-end--
+# --field-start--
+fieldName=startDate
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=county
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.UserTrigger
+tableName=usertrigger
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=USER_TRIGGER_ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=type
+columnName=TRIGGER_TYPE
+# --field-end--
+# --field-start--
+fieldName=user
+columnName=USER_FK
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=trigger
+columnName=TRIGGER_FK
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=count
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=no.rustelefonen.hap.entities.Trigger
+tableName=trigger
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=TRIGGER_ID
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=imageId
+# --field-end--
+# --field-start--
+fieldName=title
+columnName=TRIGGER_TITLE
+# --field-end--
+# --field-start--
+fieldName=color
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

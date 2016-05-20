@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/achievement_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:selectableItemBackground"
+    android:clickable="true"
+    android:padding="@dimen/content_inset"
+    android:clipToPadding="false">
+
+    <ImageView
+        android:id="@+id/achievement_list_badge"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/badge"
+        android:src="@drawable/milestone"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/achievement_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Achievement Title"
+        android:textSize="18sp"
+        android:layout_alignTop="@+id/achievement_list_badge"
+        android:layout_toRightOf="@+id/achievement_list_badge"
+        android:layout_toEndOf="@+id/achievement_list_badge"
+        android:layout_marginLeft="32dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="-6dp" />
+
+    <TextView
+        android:id="@+id/achievement_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Some descriptio\nSecond line"
+        android:layout_below="@+id/achievement_title"
+        android:layout_alignLeft="@+id/achievement_title"
+        android:layout_alignStart="@+id/achievement_title"
+        android:gravity="start|center"
+        android:minHeight="38dp"
+        android:textSize="@dimen/achievement_text_label"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="3dp"/>
+
+    <no.rustelefonen.hap.customviews.AnimatingProgressBar
+        android:id="@+id/achievement_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/achievement_title"
+        android:layout_alignStart="@+id/achievement_title"
+        android:progress="0"
+        android:max="1000"
+        android:progressDrawable="@drawable/progress_bar"
+        android:layout_below="@id/achievement_description"/>
+
+</RelativeLayout>

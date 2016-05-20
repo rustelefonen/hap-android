@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:surfaceview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".main.tabs.info.brain.BrainActivity">
+
+    <include
+        android:id="@+id/toolbar_top_layout"
+        layout="@layout/toolbar_layout"/>
+
+    <LinearLayout
+        android:id="@+id/brain_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_top_layout"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/rajwali_surface_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/standard_card_elevation">
+
+            <View
+                android:id="@+id/brain_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <org.rajawali3d.surface.RajawaliSurfaceView
+                android:id="@+id/rajwali_surface"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                surfaceview:antiAliasingType="multisample"
+                surfaceview:frameRate="60.0"
+                surfaceview:renderMode="RENDER_WHEN_DIRTY" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/content_inset_half"
+            android:clipToPadding="false">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/content_inset_half"
+                android:layout_marginTop="@dimen/content_inset_half"
+                app:cardElevation="@dimen/standard_card_elevation">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/content_inset">
+
+                    <TextView
+                        android:id="@+id/braintext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/click_brain_title"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/small_text_size" />
+
+                    <TextView
+                        android:id="@+id/brain_info_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset_half"
+                        android:layout_below="@id/braintext"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/disclaimer_tab"
+        android:padding="@dimen/content_inset">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/intro_title"
+            android:text="@string/intro_disclaimer_label"
+            android:textColor="@color/primarytext"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/content_inset" />
+
+        <TextView
+            android:id="@+id/intro_disclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/disclaimer"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/text_label_size"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/intro_title" />
+
+        <TextView
+            android:id="@+id/rustlf_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/intro_disclaimer"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_marginTop="@dimen/content_inset"
+            android:text="@string/rustelefonens_webpage_string"
+            android:clickable="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_label_size" />
+
+        <TextView
+            android:id="@+id/utesek_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rustlf_link"
+            android:foreground="?android:selectableItemBackground"
+            android:layout_marginTop="@dimen/content_inset"
+            android:clickable="true"
+            android:text="@string/uteseksjonens_webpage_label"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_label_size" />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

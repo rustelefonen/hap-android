@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--theme colors-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#b9b9b9</color>
+    <color name="colorAccent">#FF4C3D</color>
+
+    <!--text colors-->
+    <color name="primarytext">@color/colorAccent</color>
+    <color name="secondaryText">#333333</color>
+
+    <!--page indicator intro screen-->
+    <color name="circleIndicatorGrey">#AEAEAE</color>
+
+    <color name="mainBackground">#f6f6f6</color>
+    <color name="overlay">#96000000</color>
+</resources>

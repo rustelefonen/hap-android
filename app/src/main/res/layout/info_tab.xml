@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/nested_scroll_view"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/categories_label"
+            android:fontFamily="sans-serif"
+            android:textColor="#777777"
+            android:textSize="14sp"
+            android:paddingTop="20dp"
+            android:paddingLeft="@dimen/content_inset"
+            android:paddingStart="@dimen/content_inset"
+            android:paddingBottom="@dimen/content_inset_half"/>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.5dp"
+            android:layout_marginLeft="0.5dp"
+            app:cardElevation="@dimen/standard_card_elevation">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/info_list_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/content_inset"
+                android:paddingStart="@dimen/content_inset"
+                android:clipToPadding="false" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/questions_and_answers_label"
+            android:fontFamily="sans-serif"
+            android:textColor="#777777"
+            android:textSize="14sp"
+            android:paddingTop="20dp"
+            android:paddingLeft="@dimen/content_inset"
+            android:paddingStart="@dimen/content_inset"
+            android:paddingBottom="@dimen/content_inset_half"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/info_card_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.5dp"
+            android:layout_marginLeft="0.5dp"
+            android:layout_marginBottom="@dimen/content_inset"
+            app:cardElevation="0.5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:divider="@drawable/icon_list_divider"
+                android:showDividers="middle">
+
+                <RelativeLayout
+                    android:id="@+id/call_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="@dimen/content_inset"
+                    android:paddingRight="@dimen/content_inset"
+                    android:foreground="?android:selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/call_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/content_inset"
+                        android:layout_marginEnd="@dimen/content_inset"
+                        android:src="@drawable/call"/>
+
+                    <TextView
+                        android:id="@+id/call_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/call_rustelefonen_label"
+                        android:textSize="16sp"
+                        android:layout_marginRight="@dimen/content_inset"
+                        android:layout_marginEnd="@dimen/content_inset"
+                        android:layout_toLeftOf="@+id/call_row_arrow"
+                        android:layout_toStartOf="@id/call_row_arrow"
+                        android:layout_toEndOf="@id/call_icon"
+                        android:layout_toRightOf="@+id/call_icon"/>
+
+                    <ImageView
+                        android:id="@+id/call_row_arrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_forward_black_24dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chat_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="@dimen/content_inset"
+                    android:paddingRight="@dimen/content_inset"
+                    android:foreground="?android:selectableItemBackground"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/chat_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/content_inset"
+                        android:layout_marginEnd="@dimen/content_inset"
+                        android:src="@drawable/chat"/>
+
+                    <TextView
+                        android:id="@+id/row_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/send_anonymous_label"
+                        android:textSize="@dimen/text_label_size"
+                        android:layout_marginRight="@dimen/content_inset"
+                        android:layout_marginEnd="@dimen/content_inset"
+                        android:layout_toLeftOf="@+id/chat_row_arrow"
+                        android:layout_toStartOf="@id/chat_row_arrow"
+                        android:layout_toEndOf="@id/chat_icon"
+                        android:layout_toRightOf="@+id/chat_icon"/>
+
+                    <ImageView
+                        android:id="@+id/chat_row_arrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_forward_black_24dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

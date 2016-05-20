@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<no.rustelefonen.hap.customviews.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nested_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/graph_card"
+                style="@style/AppTheme.CardViewStyle">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/content_inset"
+                    android:clipChildren="false">
+
+                    <TextView
+                        android:id="@+id/graph_card_title"
+                        style="@style/AppTheme.CardViewListHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/abstinens_oversikt" />
+
+                    <ImageView
+                        android:id="@+id/graph_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:clickable="true"
+                        android:contentDescription="@string/content_info_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:paddingBottom="@dimen/content_inset"
+                        android:paddingLeft="@dimen/content_inset"
+                        android:paddingRight="@dimen/content_inset"
+                        android:paddingTop="12dp"
+                        android:src="@drawable/ic_info_outline_black_24dp"
+                        android:tint="@color/colorAccent" />
+
+                    <no.rustelefonen.hap.customviews.graph.Graph
+                        android:id="@+id/graph_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="168dp"
+                        android:layout_below="@+id/graph_card_title"
+                        android:background="?android:selectableItemBackground"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginRight="@dimen/content_inset"
+                        android:paddingBottom="20dp"
+                        android:paddingLeft="24dp"
+                        android:paddingStart="24dp"
+                        android:paddingRight="@dimen/content_inset_half"
+                        android:paddingEnd="@dimen/content_inset_half"
+                        android:paddingTop="@dimen/content_inset"
+                        android:layout_marginTop="-12dp"
+                        app:line_color="#BFBFBF"
+                        app:line_width="1dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/graph_view"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginStart="@dimen/content_inset"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/content_inset_half"
+                            android:layout_height="@dimen/content_inset_half"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="#90C978" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:focusableInTouchMode="false"
+                            android:text="@string/thc"
+                            android:textSize="10sp" />
+
+                        <FrameLayout
+                            android:layout_width="20dp"
+                            android:layout_height="5dp"
+                            android:visibility="invisible" />
+
+                        <FrameLayout
+                            android:layout_width="@dimen/content_inset_half"
+                            android:layout_height="@dimen/content_inset_half"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginRight="4dp"
+                            android:background="#82c6dd" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/moodswings"
+                            android:textSize="10sp" />
+
+                        <FrameLayout
+                            android:layout_width="20dp"
+                            android:layout_height="5dp"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/your_pos_img"
+                            android:layout_width="12dp"
+                            android:layout_height="20dp"
+                            android:paddingRight="4dp"
+                            android:paddingEnd="4dp"
+                            android:src="@drawable/you" />
+
+                        <TextView
+                            android:id="@+id/your_pos_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/your_position"
+                            android:textSize="10sp" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/resisted_chartpie_card"
+                android:layout_below="@+id/graph_card"
+                style="@style/AppTheme.CardViewStyle">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/content_inset">
+
+                    <TextView
+                        android:id="@+id/resisted_card_title"
+                        style="@style/AppTheme.CardViewListHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="36dp"
+                        android:layout_marginEnd="36dp"
+                        android:text="@string/positive_triggers" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/resisted_piechart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/resisted_card_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginStart="@dimen/content_inset"
+                        android:minHeight="200dp" />
+
+                    <TextView
+                        android:id="@+id/resisted_no_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/resisted_card_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/avoided_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:clickable="true"
+                        android:contentDescription="@string/content_info_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:paddingBottom="@dimen/content_inset"
+                        android:paddingLeft="@dimen/content_inset"
+                        android:paddingRight="@dimen/content_inset"
+                        android:paddingTop="12dp"
+                        android:src="@drawable/ic_info_outline_black_24dp"
+                        android:tint="@color/colorAccent" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/smoked_chartpie_card"
+                android:layout_below="@+id/resisted_chartpie_card"
+                style="@style/AppTheme.CardViewStyle"
+                android:layout_marginBottom="@dimen/content_inset_half">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/content_inset">
+
+                    <TextView
+                        android:id="@+id/smoked_card_title"
+                        style="@style/AppTheme.CardViewListHeader"
+                        android:layout_marginRight="36dp"
+                        android:layout_marginEnd="36dp"
+                        android:text="@string/negative_triggers" />
+
+                    <ImageView
+                        android:id="@+id/smoked_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:clickable="true"
+                        android:contentDescription="@string/content_info_desc"
+                        android:foreground="?android:selectableItemBackground"
+                        android:paddingBottom="@dimen/content_inset"
+                        android:paddingLeft="@dimen/content_inset"
+                        android:paddingRight="@dimen/content_inset"
+                        android:paddingTop="12dp"
+                        android:src="@drawable/ic_info_outline_black_24dp"
+                        android:tint="@color/colorAccent" />
+
+                    <com.github.mikephil.charting.charts.PieChart
+                        android:id="@+id/smoked_piechart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smoked_card_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginStart="@dimen/content_inset"
+                        android:minHeight="200dp" />
+
+                    <TextView
+                        android:id="@+id/smoked_no_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smoked_card_title"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        android:textSize="14sp"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/overlay"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/tutorial_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_gravity="right"
+                android:contentDescription="@string/tutorial_arrow"
+                android:src="@drawable/triggerdagboktutorial"
+                android:visibility="visible"
+                android:rotation="110"
+                android:layout_marginRight="60dp"
+                android:alpha="0.8"/>
+        </FrameLayout>
+
+    </FrameLayout>
+</no.rustelefonen.hap.customviews.NestedScrollView>

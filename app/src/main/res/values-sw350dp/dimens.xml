@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Clock View-->
+    <dimen name="clockview_number_text_size">32dp</dimen>
+    <dimen name="clockview_unit_text_size">18dp</dimen>
+</resources>

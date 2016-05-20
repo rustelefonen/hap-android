@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClockView">
+        <!--The text size of the shown numbers-->
+        <attr name="number_label_text_size" format="dimension"/>
+        <!--The text color of the shown numbers-->
+        <attr name="number_label_text_color" format="color"/>
+        <!--The font family of the shown numbers-->
+        <attr name="number_label_font_family" format="string"/>
+        <!--The text size of the shown units-->
+        <attr name="unit_label_text_size" format="dimension"/>
+        <!--The text color of the shown units-->
+        <attr name="unit_label_text_color" format="color"/>
+        <!--The font family of the shown units-->
+        <attr name="unit_label_font_family" format="string"/>
+        <!--The maximum height of the circles-->
+        <attr name="circle_max_height" format="dimension"/>
+
+        <attr name="unit_days_plural_text" format="string"/>
+        <attr name="unit_minutes_plural_text" format="string"/>
+        <attr name="unit_hours_plural_text" format="string"/>
+
+        <attr name="unit_days_singular_text" format="string"/>
+        <attr name="unit_hours_singular_text" format="string"/>
+        <attr name="unit_minutes_singular_text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="Graph">
+        <attr name="line_width" format="dimension"/>
+        <attr name="line_color" format="color"/>
+        <attr name="meta_data_text_size" format="dimension"/>
+    </declare-styleable>
+</resources>

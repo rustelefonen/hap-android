@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/user_registration_tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/content_inset"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+        <TextView
+            android:id="@+id/intro_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/primarytext"
+            android:textSize="28sp"
+            android:text="@string/intro_choose_date"
+            android:layout_marginTop="@dimen/content_inset"
+            android:layout_gravity="center_horizontal" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+

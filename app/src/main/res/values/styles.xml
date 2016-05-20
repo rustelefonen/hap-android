@@ -1,0 +1,67 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="AppTheme.Base" />
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--theme colors-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--text colors-->
+        <item name="titleTextColor">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/primarytext</item>
+        <item name="android:textColor">@color/secondaryText</item>
+
+        <!--tabs-->
+        <item name="tabIndicatorColor">@color/colorAccent</item>
+        <item name="tabSelectedTextColor">@color/colorAccent</item>
+        <item name="tabTextColor">@color/colorAccent</item>
+
+        <!--main background color-->
+        <item name="android:windowBackground">@color/mainBackground</item>
+
+        <!--action bar-->
+        <item name="android:actionOverflowButtonStyle">@style/menuOverflow</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.CardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+    <style name="AppTheme.CardViewListHeader">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/primarytext</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif-medium</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AboutLibrariesTheme" parent="AppTheme.NoActionBar">
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="menuOverflow" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@mipmap/ic_action_navigation_more_vert</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

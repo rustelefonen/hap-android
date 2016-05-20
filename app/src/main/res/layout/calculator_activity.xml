@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_top_layout"
+        layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardElevation="@dimen/standard_card_elevation">
+
+                <TextView
+                    android:id="@+id/price_calculator_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset"
+                    android:text="@string/price_calculator_info"
+                    android:textSize="18sp"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardElevation="@dimen/standard_card_elevation">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/user_price_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginRight="@dimen/content_inset">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/user_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/price_per_gram_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/user_gram_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorEnabled="true"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:layout_marginLeft="@dimen/content_inset"
+                        android:layout_marginRight="@dimen/content_inset">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/usage_gram"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/user_gram_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <RadioGroup
+                        android:id="@+id/usage_frequency_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/content_inset_half"
+                        android:layout_marginBottom="@dimen/content_inset">
+
+                        <RadioButton
+                            android:id="@+id/per_day_usage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/per_day"
+                            android:layout_marginEnd="@dimen/content_inset"
+                            android:layout_marginRight="@dimen/content_inset" />
+
+                        <RadioButton
+                            android:id="@+id/per_week_usage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/per_week"
+                            android:layout_marginRight="@dimen/content_inset"
+                            android:layout_marginEnd="@dimen/content_inset" />
+
+                        <RadioButton
+                            android:id="@+id/per_month_usage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/per_month" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:id="@+id/save_calculator_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/content_inset"
+                android:text="@string/save"
+                android:foreground="?android:selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

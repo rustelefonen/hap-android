@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Home tab-->
+    <string name="clock_number_font">sans-serif-thin</string>
+    <string name="daily_subject_header_font">sans-serif-thin</string>
+    <string name="daily_subject_text_font">sans-serif-light</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:foreground="?android:selectableItemBackground"
+    android:clickable="true"
+    android:paddingTop="@dimen/content_inset_half"
+    android:paddingBottom="4dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/situation_icon_frame"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/situation_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/situation_icon"
+            android:src="@drawable/pc"
+            android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+            android:id="@+id/passed_situation_checkmark"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="fitEnd"
+            android:src="@drawable/checkmark"
+            android:layout_gravity="end|bottom"
+            android:alpha="0"
+            tools:alpha="1"
+            android:contentDescription="@string/checkmark" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/situation_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="This is a label"
+        android:layout_gravity="center_horizontal"
+        android:textSize="12sp"
+        android:textColor="#444444"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:ellipsize="end" />
+
+</LinearLayout>

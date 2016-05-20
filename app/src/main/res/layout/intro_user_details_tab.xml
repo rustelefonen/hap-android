@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/user_details_tab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/content_inset">
+
+        <TextView
+            android:id="@+id/intro_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help_us"
+            android:textColor="@color/primarytext"
+            android:textSize="28sp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/intro_research_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_research_text"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif-light"
+            android:layout_below="@+id/intro_title"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/intro_research_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_details_agree_research_label"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            android:layout_below="@+id/intro_research_info"
+            android:layout_marginTop="@dimen/content_inset" />
+
+
+        <Switch
+            android:id="@+id/info_research_agree_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/intro_research_agree"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+        <LinearLayout
+            android:id="@+id/user_research_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:layout_below="@id/info_research_agree_switch"
+            android:divider="@drawable/list_divider"
+            android:showDividers="middle">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_inset">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/age"
+                    android:textColor="#777777"
+                    android:textSize="@dimen/text_label_size" />
+
+                <Spinner
+                    android:id="@+id/age_list"
+                    android:layout_width="wrap_content"
+                    android:minWidth="155dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/content_inset_negative"
+                    android:layout_marginEnd="@dimen/content_inset_negative"
+                    tools:layout_width="200dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_inset">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/gender"
+                    android:textColor="#777777"
+                    android:textSize="@dimen/text_label_size" />
+
+                <Spinner
+                    android:id="@+id/gender_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/content_inset_negative"
+                    android:layout_marginEnd="@dimen/content_inset_negative"
+                    tools:layout_width="200dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_inset">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/county"
+                    android:textColor="#777777"
+                    android:textSize="@dimen/text_label_size" />
+
+                <Spinner
+                    android:id="@+id/county_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/content_inset_negative"
+                    android:layout_marginEnd="@dimen/content_inset_negative"
+                    tools:layout_width="200dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextSwitcher
+            android:id="@+id/intro_start_program"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/user_research_data"
+            android:layout_centerHorizontal="true"
+            android:measureAllChildren="false"
+            android:inAnimation="@android:anim/slide_in_left"
+            android:outAnimation="@android:anim/slide_out_right">
+
+            <Button
+                android:id="@+id/intro_start_program_without_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/intro_details_disagree_button_text"
+                android:foreground="?android:selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorPrimary"/>
+
+            <Button
+                android:id="@+id/intro_start_program_with_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:textColor="@color/colorPrimary"/>
+
+        </TextSwitcher>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>
+

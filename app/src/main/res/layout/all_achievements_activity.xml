@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/toolbar_top_layout"
+        layout="@layout/toolbar_layout"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_top_layout"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/upcoming_card_view"
+                style="@style/AppTheme.CardViewStyle">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/upcoming_card_title"
+                        style="@style/AppTheme.CardViewListHeader"
+                        android:text="@string/upcoming_achievements" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/upcoming_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/upcoming_card_title"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/completed_card_view"
+                android:layout_below="@+id/upcoming_card_view"
+                style="@style/AppTheme.CardViewStyle"
+                android:layout_marginBottom="@dimen/content_inset_half">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/completed_card_title"
+                        style="@style/AppTheme.CardViewListHeader"
+                        android:text="@string/completed_achievements" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/completed_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/completed_card_title" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

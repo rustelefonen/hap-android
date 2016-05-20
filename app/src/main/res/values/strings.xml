@@ -1,0 +1,146 @@
+<resources>
+    <string name="app_name">HAP</string>
+
+    <!--Intro-->
+    <string name="intro_welcome">Velkommen til HAP</string>
+    <string name="intro_description">Skyv for å starte \u003C</string>
+    <string name="intro_swipe_information_description">Instruksjon for swiping</string>
+    <string name="intro_disclaimer_label">Litt Informasjon</string>
+    <string name="disclaimer">Denne appen er ment for å hjelpe deg som ønsker å ta en pause fra eller avslutte ditt cannabisbruk. Dersom du selv ikke ønsker å ta en pause/slutte med cannabis er ikke dette appen for deg.\n\nAppen er basert på Uteseksjonen i Oslo sine erfaringer med å drive hasjavvenning gjennom mange år, og tar utgangspunkt i hasjavvenningsprogrammet (HAP) utviklet av Thomas Lundqvist og Dan Ericsson. Innholdet i appen er for øvrig informert av oppdatert forskning om cannabis/behandling og erfaringsbasert kunnskap fra både klienter og fagfolk. Appens tidsramme strekker seg over åtte uker og er ment som et supplement til HAP. Du trenger derimot ikke være involvert i dette programmet for å ha nytte av appen.\n\nAppen er utviklet av studenter i samarbeid med RUStelefonen og Uteseksjonen i Oslo kommune, Velferdsetaten. Vi etterstreber en nøytral holdning til ulike problemstillinger rundt cannabisproblematikk. Send oss gjerne en mail dersom du har tilbakemeldinger på appen som vi kan forbedre.</string>
+    <string name="rustelefonens_webpage_string">RUStelefonens nettside</string>
+    <string name="rustlf_url">http://www.rustelefonen.no/</string>
+    <string name="uteseksjonens_webpage_label">Uteseksjonens nettside</string>
+    <string name="uteseksjonen_url">http://www.uteseksjonen.no/</string>
+    <string name="intro_choose_date">Velg startdato</string>
+    <string name="help_us">Vil du bidra til å forbedre vårt hjelpetilbud?</string>
+    <string name="intro_research_text">Ved å gi noen enkle opplysninger om deg selv bidrar du til at vi kan forbedre vårt hjelpetilbud. Du vil fortsatt være anonym.</string>
+    <string name="intro_research_already_participate">Du har allerede bidratt til å forbedre vårt hjelpetilbud. Tusen takk!</string>
+    <string name="intro_details_agree_research_label">Jeg ønsker å bidra</string>
+    <string name="intro_details_agree_button_text">Start appen nå</string>
+    <string name="intro_details_disagree_button_text">Nei takk, start appen nå</string>
+
+    <!--Navigation bar-->
+    <string name="navigation_drawer_open">Åpne hamburgermenyen</string>
+    <string name="navigation_drawer_close">Lukk hamburgermenyen</string>
+    <string name="subtitle">Hasjavvenningsprogrammet</string>
+    <string name="general_section_header">Generelt</string>
+    <string name="notification_settings">Varslingsinnstillinger</string>
+    <string name="about_app">Om applikasjonen</string>
+    <string name="reset_section_header">Tilbakestilling</string>
+    <string name="reset_timer_string">Nullstill tidtakeren</string>
+    <string name="reset_positive_triggers_string">Nullstill positive triggere</string>
+    <string name="reset_negative_triggers_string">Nullstill negative triggere</string>
+    <string name="reset_app">Tilbakestill app</string>
+
+    <!--Tab titles-->
+    <string name="home_tab_title">Hjem</string>
+    <string name="overview_tab_title">Oversikt</string>
+    <string name="achievements_tab_title">Prestasjoner</string>
+    <string name="info_tab_title">Informasjon</string>
+
+    <!--Home tab-->
+    <string name="program_started_clock_label">Tid siden du startet programmet</string>
+    <string name="program_not_started_clock_label">Du starter programmet om</string>
+    <string name="price_calculator_not_started">Start Sparekalkulator</string>
+    <string name="price_calculator_started">Du har spart %s kr!</string>
+    <string name="daily_theme_string">Dagens Tema</string>
+    <string name="daily_subject_header_font">sans-serif-light</string>
+    <string name="daily_subject_text_font">sans-serif</string>
+    <string name="clock_number_font">sans-serif-light</string>
+    <string name="clock_unit_font">sans-serif-light</string>
+
+    <!--Overview tab-->
+    <string name="abstinens_oversikt">Abstinensoversikt</string>
+    <string name="thc">THC</string>
+    <string name="moodswings">Humørsvingninger</string>
+    <string name="your_position">Din posisjon</string>
+    <string name="positive_triggers">Aktiviteter som hjelper mot suget</string>
+    <string name="negative_triggers">Triggere som fører til bruk</string>
+    <string name="tutorial_arrow">Hjelper-pil som viser hvor du skal trykke</string>
+
+    <!--Achievements tab-->
+    <string name="tab_icon_desc">Tab Icon</string>
+    <string name="badge">badge</string>
+    <string name="next_achievement">Neste prestasjon</string>
+    <string name="achievement_next_arrow">Prestasjonspil</string>
+    <string name="completed_achievements">Fullførte prestasjoner</string>
+    <string name="upcoming_achievements">Neste prestasjoner</string>
+
+    <!--Info tab-->
+    <string name="search">Søk</string>
+    <string name="search_hint">Søk etter informasjon</string>
+    <string name="categories_label">KATEGORIER</string>
+    <string name="questions_and_answers_label">SPØRSMÅL OG SVAR</string>
+    <string name="call_rustelefonen_label">Ring RUStelefonen</string>
+    <string name="send_anonymous_label">Send anonymt spørsmål</string>
+
+    <!--Calculator-->
+    <string name="price_per_gram_hint">Pris per gram</string>
+    <string name="user_gram_hint">Antall gram</string>
+    <string name="price_calculator_info">Her kan du fylle inn hvor mye du betaler per gram og hvor mye du pleier å røyke. Appen vil automatisk holde kontroll på hvor mye du har spart!</string>
+    <string name="price_error_string">Pris per gram påkrevd</string>
+    <string name="gram_error_string">Gram er påkrevd</string>
+    <string name="per_day">Per dag</string>
+    <string name="per_week">Per uke</string>
+    <string name="per_month">Per måned</string>
+
+    <!--Triggers-->
+    <string name="trigger_question">Hva skjer?</string>
+    <string name="resisted">Jeg motstod rus</string>
+    <string name="passed_sitation">Situasjon bestått</string>
+    <string name="smoked">Jeg ruset meg</string>
+    <string name="failed_situation">failed_situation</string>
+    <string name="positive_trigger_title">Hva hjalp deg?</string>
+    <string name="negative_trigger_title">Hva trigget deg?</string>
+    <string name="situation_icon">Situasjons-ikon</string>
+    <string name="checkmark">Avkrysningmerke</string>
+    <string name="no_triggers_selected_dialog_title">Legg til triggere</string>
+    <string name="no_triggers_selected_dialog_text">Du har ikke valgt noen triggere</string>
+    <string name="no_trigger_type_selected_dialog_title">Ingen Triggertype valgt</string>
+    <string name="no_trigger_type_selected_dialog_text">Du har ikke valgt triggertype</string>
+
+    <!--3D-Brain-->
+    <string name="click_brain_title">Klikk på en hjernedel for mer info</string>
+
+    <!--Contact form-->
+    <string name="contact_info">Har du spørsmål om rus? Still dem her, eller ring 08588! Alle henvendelser er helt anonyme.\nSvar på spørsmål legges ut på vår nettside. I perioder med mye pågang kan det ta opptil 7 dager før svaret publiseres.</string>
+    <string name="contact_info_link"><a href="http://www.rustelefonen.no/besvarte-sporsmal-og-svar">Svarene finner du her!</a></string>
+    <string name="information">Opplysninger</string>
+    <string name="age">Alder:</string>
+    <string name="gender">Kjønn:</string>
+    <string name="county">Fylke:</string>
+    <string name="question">Spørsmål</string>
+    <string name="title">Tittel</string>
+    <string name="your_question_hint">Ditt spørsmål</string>
+    <string name="send_question">Send spørsmål</string>
+
+    <!-- About Libraries -->
+    <string name="aboutLibraries_description_showIcon">true</string>
+    <string name="aboutLibraries_description_showVersion">true</string>
+    <string name="aboutLibraries_description_text">Her er en liste over tredjepartsbiblioteker som er benyttet i denne applikasjonen.</string>
+
+    <!--Notification settings-->
+    <string name="achievements_title">Prestasjoner</string>
+    <string name="minor_milestones">Små milepæler</string>
+    <string name="major_milestones">Store milepæler</string>
+    <string name="financial_milestones">Økonomiske prestasjoner</string>
+    <string name="health_milestones">Helseprestasjoner</string>
+
+    <!--Achievement notification-->
+    <string name="achievement_notification_text">Du har oppnådd en ny prestasjon!</string>
+
+    <!--Dialogs-->
+    <string name="not_saved_title">Ikke lagret!</string>
+    <string name="not_saved_text">Du har ikke lagret endringene</string>
+    <string name="dialog_destructive_button">Forkast</string>
+    <string name="dialog_destructive_abort_button">Avbryt</string>
+    <string name="dialog_confirm_exit_button">Avslutt</string>
+    <string name="dialog_ok_button">OK</string>
+
+    <!--Misc-->
+    <string name="list_arrow">List Arrow</string>
+    <string name="content_info_desc">Info</string>
+    <string name="save">Lagre</string>
+    <string name="user_details_age_placeholder">Velg alder</string>
+
+</resources>

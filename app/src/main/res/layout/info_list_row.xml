@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15.5dp"
+    android:paddingTop="15.5dp"
+    android:paddingRight="@dimen/content_inset"
+    android:paddingEnd="@dimen/content_inset"
+    android:paddingLeft="@dimen/content_inset"
+    android:paddingStart="@dimen/content_inset"
+    android:layout_marginLeft="@dimen/content_inset_negative"
+    android:layout_marginStart="@dimen/content_inset_negative"
+    android:foreground="?android:selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/row_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="@dimen/content_inset"
+        android:layout_marginEnd="@dimen/content_inset"
+        tools:src="@mipmap/appicon"
+        android:contentDescription="Info row icon" />
+
+    <TextView
+        android:id="@+id/row_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="9"
+        android:text="Row Label"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:layout_marginRight="@dimen/content_inset"
+        android:layout_marginEnd="@dimen/content_inset" />
+
+    <ImageView
+        android:id="@+id/row_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_forward_black_24dp"
+        android:tint="@color/colorAccent"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="Row arrow" />
+
+</LinearLayout>

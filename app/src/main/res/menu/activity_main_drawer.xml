@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/general_section_header">
+        <menu>
+            <item
+                android:id="@+id/notification_settings"
+                android:icon="@android:drawable/ic_menu_preferences"
+                android:title="@string/notification_settings" />
+
+            <item
+                android:id="@+id/about_app"
+                android:icon="@android:drawable/ic_menu_info_details"
+                android:title="@string/about_app"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/reset_section_header">
+        <menu>
+            <item
+                android:id="@+id/reset_timer"
+                android:icon="@android:drawable/ic_menu_revert"
+                android:title="@string/reset_timer_string"/>
+
+            <item
+                android:id="@+id/reset_positive_triggers"
+                android:icon="@android:drawable/ic_menu_revert"
+                android:title="@string/reset_positive_triggers_string"/>
+
+            <item
+                android:id="@+id/reset_negative_triggers"
+                android:icon="@android:drawable/ic_menu_revert"
+                android:title="@string/reset_negative_triggers_string"/>
+
+            <item
+                android:id="@+id/reset_app"
+                android:icon="@android:drawable/ic_delete"
+                android:title="@string/reset_app"/>
+        </menu>
+    </item>
+
+</menu>

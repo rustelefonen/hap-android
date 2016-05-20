@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="small_text_size">24sp</dimen>
+    <dimen name="large_text_size">36sp</dimen>
+    <dimen name="toolbar_margin">56dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="textInputStyleWidth">150dp</dimen>
+    <dimen name="content_inset">16dp</dimen>
+    <dimen name="content_inset_half">8dp</dimen>
+    <dimen name="content_inset_negative">-16dp</dimen>
+    <dimen name="content_inset_half_negative">-8dp</dimen>
+    <dimen name="floating_label_height">60dp</dimen>
+    <dimen name="padding_label_text">12dp</dimen>
+    <dimen name="padding_input_text">4dp</dimen>
+
+    <dimen name="tiny_margin_top">4dp</dimen>
+    <dimen name="tiny_margin_bottom">4dp</dimen>
+    <dimen name="standard_card_elevation">1dp</dimen>
+
+    <!-- Font sizes -->
+    <dimen name="achievement_text_label">12sp</dimen>
+    <dimen name="text_label_size">16sp</dimen>
+    <dimen name="standard_text_label">13sp</dimen>
+
+    <!--Clock View-->
+    <dimen name="clockview_number_text_size">26dp</dimen>
+    <dimen name="clockview_unit_text_size">16dp</dimen>
+
+</resources>

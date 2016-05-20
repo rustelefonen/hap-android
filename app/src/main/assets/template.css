@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+body {
+    font-style: normal;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+* {
+    font-family: -apple-system, sans-serif !important;
+}
+
+h1 {
+    font-weight: 200;
+    color: #FF4C3D;
+    font-size: 250%;
+    padding-top: 15px;
+}
+
+h2 {
+    font-weight: 200;
+    color: #FF4C3D  ;
+    font-size: 200%;
+}
+
+a, a:visited{
+    color: #FF4C3D  ;
+    font-weight: normal;
+    font-size: 110%;
+    text-decoration: none; /* no underline */
+}
+
+p {
+    color: #323232  ;
+    font-weight: normal;
+    font-size: 110%;
+}
+
+ul {
+    padding-top: 15px;
+}
+
+li {
+    font-weight: normal;
+    font-size: 110%;
+    padding-bottom: 14px;
+    color: #aaaaaa;
+    text-indent: -1.9em;
+    list-style: none;
+
+}
+
+li:before {
+    content: "⇨ \00a0 \00a0";
+    font-weight: lighter;
+    color: #FF4C3D  ;
+    font-size: 110%;
+}
+
+pre{
+    font-weight: normal;
+    font-size: 80%;
+}

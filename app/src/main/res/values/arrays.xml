@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genders">
+        <item>Velg Kjønn</item>
+        <item>Mann</item>
+        <item>Kvinne</item>
+        <item>Annet</item>
+    </string-array>
+
+    <string-array name="counties">
+        <item>Velg Fylke</item>
+        <item>Akershus</item>
+        <item>Aust-Agder</item>
+        <item>Buskerud</item>
+        <item>Finnmark</item>
+        <item>Hedmark</item>
+        <item>Hordaland</item>
+        <item>Møre og Romsdal</item>
+        <item>Nord-Trøndelag</item>
+        <item>Nordland</item>
+        <item>Oppland</item>
+        <item>Oslo</item>
+        <item>Rogaland</item>
+        <item>Sogn og Fjordane</item>
+        <item>Sør-Trøndelag</item>
+        <item>Telemark</item>
+        <item>Troms</item>
+        <item>Vest-Agder</item>
+        <item>Vestfold</item>
+        <item>Østfold</item>
+    </string-array>
+
+    <!-- Database Strings -->
+
+    <!-- Achievements -->
+    <string-array name="achievements">
+        <!--Minor Milestone-->
+        <item>{title: \"Første dagen uten!\", description: \"Du har klart din første dag uten cannabis!\", pointsRequired: \"86400\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"3 dager uten!\", description: \"Du har klart 3 dager uten cannabis!\", pointsRequired: \"259200\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"2 uker uten!\", description: \"Du har klart to uker uten cannabis!\", pointsRequired: \"1209600\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"3 uker uten!\", description: \"Du har tre uker uten cannabis!\", pointsRequired: \"1814400\", type: \"Minor_Milestone\"}</item>
+
+        <item>{title: \"En måned uten!\", description: \"Du har klart deg en hel måned uten cannabis!\", pointsRequired: \"2628003\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"5 uker uten!\", description: \"Du har holdt deg fem uker uten cannabis!\", pointsRequired: \"3024000\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"6 uker uten!\", description: \"Du har holdt deg seks uker uten cannabis!\", pointsRequired: \"3628800\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"7 uker uten!\", description: \"Du har holdt deg syv uker uten cannabis!\", pointsRequired: \"4233600\", type: \"Minor_Milestone\"}</item>
+        <item>{title: \"2 måneder uten!\", description: \"Du har holdt deg to måneder uten cannabis!\", pointsRequired: \"5184000\", type: \"Minor_Milestone\"}</item>
+
+        <!--Milestone-->
+        <item>{title: \"Første skrittet!\", description: \"Du har tatt det første skrittet mot en rusfri hverdag!\", pointsRequired: \"0\", type: \"Milestone\"}</item>
+        <item>{title: \"Første uken uten!\", description: \"Du har klart en uke uten cannabis!\", pointsRequired: \"604800\", type: \"Milestone\"}</item>
+        <item>{title: \"Fase 1 gjennomført!\", description: \"Du har kommet deg gjennom fase 1 av HAP programmet!\", pointsRequired: \"1036800\", type: \"Milestone\"}</item>
+        <item>{title: \"Fase 2 gjennomført!\", description: \"Du har kommet deg gjennom fase 2 av HAP programmet!\", pointsRequired: \"1814400\", type: \"Milestone\"}</item>
+        <item>{title: \"HAP gjennomført!\", description: \"Du har kommet deg gjennom HAP programmet, det er 8 uker rusfri!\", pointsRequired: \"4838400\", type: \"Milestone\"}</item>
+        <item>{title: \"Et halvt år uten!\", description: \"Du har holdt deg et halvt år uten cannabis!\", pointsRequired: \"15768000\", type: \"Milestone\"}</item>
+        <item>{title: \"Et helt år uten!\", description: \"Du har holdt deg et helt år uten cannabis!\", pointsRequired: \"31536000\", type: \"Milestone\"}</item>
+        <item>{title: \"To år uten!\", description: \"Du har holdt deg to år uten cannabis!\", pointsRequired: \"63072000\", type: \"Milestone\"}</item>
+        <item>{title: \"Tre år uten!\", description: \"Du har holdt deg tre år uten cannabis!\", pointsRequired: \"94608000\", type: \"Milestone\"}</item>
+        <item>{title: \"Fire år uten!\", description: \"Du har holdt deg fire år uten cannabis!\", pointsRequired: \"126144000\", type: \"Milestone\"}</item>
+        <item>{title: \"Fem år uten!\", description: \"Du har holdt deg fem år uten cannabis!\", pointsRequired: \"157680000\", type: \"Milestone\"}</item>
+
+        <!--Finance-->
+        <item>{title: \"Brukt kalkulatoren!\", description: \"Du har tatt i bruk kalkulatoren!\", pointsRequired: \"1\", type: \"Finance\"}</item>
+        <item>{title: \"1000 kr Spart!\", description: \"Du har spart 1000 kr!\", pointsRequired: \"1000\", type: \"Finance\"}</item>
+        <item>{title: \"5000 kr Spart!\", description: \"Du har spart 5000 kr!\", pointsRequired: \"5000\", type: \"Finance\"}</item>
+        <item>{title: \"10 000 kr Spart!\", description: \"Du har spart 10 000 kr!\", pointsRequired: \"10000\", type: \"Finance\"}</item>
+        <item>{title: \"20 000 kr Spart!\", description: \"Du har spart 20 000 kr!\", pointsRequired: \"20000\", type: \"Finance\"}</item>
+        <item>{title: \"30 000 kr Spart!\", description: \"Du har spart 30 000 kr!\", pointsRequired: \"30000\", type: \"Finance\"}</item>
+        <item>{title: \"40 000 kr Spart!\", description: \"Du har spart 40 000 kr!\", pointsRequired: \"40000\", type: \"Finance\"}</item>
+        <item>{title: \"50 000 kr Spart!\", description: \"Du har spart 50 000 kr!\", pointsRequired: \"50000\", type: \"Finance\"}</item>
+        <item>{title: \"100 000 kr Spart!\", description: \"Du har spart hele 100 000 kr!\", pointsRequired: \"100000\", type: \"Finance\"}</item>
+        <item>{title: \"1 000 000 kr Spart!\", description: \"Du har spart hele 1 000 000 kr!\", pointsRequired: \"1000000\", type: \"Finance\"}</item>
+
+        <!--Health-->
+        <item>{title: \"Mer matlyst\", description: \"Nå opplever mange å få bedre matlyst/appetitt\", pointsRequired: \"777600\", type: \"Health\"}</item>
+        <item>{title: \"Svetting\", description: \"Nå kan du forvente at svettingen begynner å avta\", pointsRequired: \"864000\", type: \"Health\"}</item>
+        <item>{title: \"Mindre rastløshet\", description: \"Her kan du forvente at rastløsheten vil roe seg\", pointsRequired: \"1296000\", type: \"Health\"}</item>
+        <item>{title: \"Om følelser\", description: \"Nå opplever flere at følelser som sinne, aggresjon og angst vil roe seg\", pointsRequired: \"1814400\", type: \"Health\"}</item>
+        <item>{title: \"Mindre irritasjon\", description: \"Nå opplever mange at de blir mindre irritable\", pointsRequired: \"1900800\", type: \"Health\"}</item>
+        <item>{title: \"Bedre korttidshukommelse\", description: \"Ofte vil korttidshukommelsen nå bli bedre\", pointsRequired: \"2592000\", type: \"Health\"}</item>
+        <item>{title: \"Bedre Søvn\", description: \"Nå opplever mange at de sover bedre, men søvnforstyrrelser kan vare lenger for noen\", pointsRequired: \"3456000\", type: \"Health\"}</item>
+        <item>{title: \"Sov Godt\", description: \"Nå kan du forvente at drømmeaktiviteten din blir mer rolig og stabil, og drømmene mindre intense\", pointsRequired: \"4320000\", type: \"Health\"}</item>
+
+    </string-array>
+
+    <string-array name="helpinfo_category">
+        <item>{title: \"Råd og tips\", orderNumber: \"1\", versionNumber: \"0\"}</item>
+        <item>{title: \"Abstinenser\", orderNumber: \"2\", versionNumber: \"0\"}</item>
+        <item>{title: \"Følelser\", orderNumber: \"3\", versionNumber: \"0\"}</item>
+        <item>{title: \"Program\", orderNumber: \"4\", versionNumber: \"0\"}</item>
+        <item>{title: \"Øvelser\", orderNumber: \"5\", versionNumber: \"0\"}</item>
+        <item>{title: \"Cannabis Informasjon\", orderNumber: \"6\", versionNumber: \"0\"}</item>
+        <item>{title: \"Hjernen\", orderNumber: \"7\", versionNumber: \"0\"}</item>
+        <item>{title: \"Sosialt Fokus\", orderNumber: \"8\", versionNumber: \"0\"}</item>
+        <item>{title: \"Tilbakefall\", orderNumber: \"9\", versionNumber: \"0\"}</item>
+    </string-array>
+
+    <string-array name="helpinfo">
+        <!--Råd og tips-->
+        <item>{title: \"Praktiske råd når du skal slutte\", url: \"tipsandtricks/praktiske_raad_naar_du_skal_slutte.html\", categoryId: \"1\"}</item>
+        <item>{title: \"Tips til andre aktiviteter\", url: \"tipsandtricks/tips_til_andre_aktiviteter.html\", categoryId: \"1\"}</item>
+        <item>{title: \"Motivasjon\", url: \"tipsandtricks/motivasjon.html\", categoryId: \"1\"}</item>
+        <item>{title: \"Hjelpetilbud og behandligstilbud\", url: \"tipsandtricks/hjelpetilbud_og_behandlingstilbud.html\", categoryId: \"1\"}</item>
+        <item>{title: \"Strategier\", url: \"tipsandtricks/strategier.html\", categoryId: \"1\"}</item>
+
+        <!--Abstinenser-->
+        <item>{title: \"Søvnproblemer, Mareritt og intense drømmer.\", url: \"abstinences/sovnproblemer_mareritt_og_annet.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Nedsatt appetitt\", url: \"abstinences/nedsatt_apetitt.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Svetting, Skjelving eller Vondt i hodet.\", url: \"abstinences/svetting_skjelving_eller_vondti_hodet.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Magetrøbbel\", url: \"abstinences/magetrobbel.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Aggresion og sinne\", url: \"abstinences/aggresjon_og_sinne.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Nedtrykhet\", url: \"abstinences/nedtrykthet.html\", categoryId: \"2\"}</item>
+        <item>{title: \"Suget\", url: \"abstinences/suget.html\", categoryId: \"2\"}</item>
+
+        <!--Følelser-->
+        <item>{title: \"Angst, Uro og Rastløshet\", url: \"feelings/angst_uro_og_rastloshet.html\", categoryId: \"3\"}</item>
+        <item>{title: \"Ensomhet, Forlatthet, Isolasjon\", url: \"feelings/ensomhet_forlatthet_og_isolasjon.html\", categoryId: \"3\"}</item>
+        <item>{title: \"Lykke, oppstemthet, belønning,  velbehag\", url: \"feelings/lykke_belonning.html\", categoryId: \"3\"}</item>
+
+        <!-- Program -->
+        <item>{title: \"Fase 1 &#8211; Fysisk fokus. Dag 1&#8211;11\", url: \"program/fase1.html\", categoryId: \"4\"}</item>
+        <item>{title: \"Fase 1 &#8211; Psykologisk fokus. Dag 12&#8211;21\", url: \"program/fase2.html\", categoryId: \"4\"}</item>
+        <item>{title: \"Fase 1 &#8211; Sosialt fokus. Dag 21&#8211;56\", url: \"program/fase3.html\", categoryId: \"4\"}</item>
+        <item>{title: \"Hasjavvenningsprogrammet\", url: \"program/hasjavvenningsprogrammet.html\", categoryId: \"4\"}</item>
+
+        <!--Øvelser-->
+        <item>{title: \"Tribuneperspektiv\", url: \"training/tribuneperspektiv.html\", categoryId: \"5\"}</item>
+        <item>{title: \"ABCD-modellen\", url: \"training/acbd_modellen.html\", categoryId: \"5\"}</item>
+        <item>{title: \"Avslapningsøvelser\", url: \"training/avslapningsovelser.html\", categoryId: \"5\"}</item>
+        <item>{title: \"FAK-modellen\", url: \"training/fak_modellen.html\", categoryId: \"5\"}</item>
+        <item>{title: \"Nettverksplanlegging\", url: \"training/nettverksplanlegging.html\", categoryId: \"5\"}</item>
+
+        <!--Cannabis Informasjon-->
+        <item>{title: \"Cannabis\", url: \"cannabis_information/cannabis.html\", categoryId: \"6\"}</item>
+        <item>{title: \"Mulige skadevirkninger ved bruk av cannabis\", url: \"cannabis_information/mulige_skadevirkninger_ved_bruk.html\", categoryId: \"6\"}</item>
+        <item>{title: \"Positive effekter av å redusere/slutte med cannabis bruk\", url: \"cannabis_information/positive.html\", categoryId: \"6\"}</item>
+
+        <!--Hjernen-->
+        <item>{title: \"Kognisjon\", url: \"brain/kognisjon.html\", categoryId: \"7\"}</item>
+        <item>{title: \"3D-Hjernen\", url: \"\", categoryId: \"7\"}</item>
+
+        <!--Sosialt Fokus-->
+        <item>{title: \"Nettverk\", url: \"socialfocus/nettverk.html\", categoryId: \"8\"}</item>
+        <item>{title: \"Identitet “Før og nå”\", url: \"socialfocus/identitet_for_og_no.html\", categoryId: \"8\"}</item>
+        <item>{title: \"Mål for fremtiden\", url: \"socialfocus/maal_for_fremtiden.html\", categoryId: \"8\"}</item>
+
+        <!--Tilbakefall-->
+        <item>{title: \"Vanlige årsaker til tilbakefall\", url: \"regression/vanligearsaker.html\", categoryId: \"9\"}</item>
+        <item>{title: \"Forebygging av tilbakefall\", url: \"regression/forebygging.html\", categoryId: \"9\"}</item>
+    </string-array>
+
+    <string-array name="triggers">
+        <item>{title: \"Mett\", image: \"aftermeal\", color: \"#fac174\"}</item>
+        <item>{title: \"Sint\", image: \"anger\", color: \"#c03145\"}</item>
+        <item>{title: \"Kjedsomhet\", image: \"bored\", color: \"#99a370\"}</item>
+        <item>{title: \"Drikke\", image: \"coffee_tea\", color: \"#51d5c0\"}</item>
+        <item>{title: \"Romanse\", image: \"date\", color: \"#f1646c\"}</item>
+        <item>{title: \"Alkohol\", image: \"drinking\", color: \"#a685a2\"}</item>
+        <item>{title: \"Krangel\", image: \"family\", color: \"#a6dd59\"}</item>
+        <item>{title: \"Trist\", image: \"feelingdown\", color: \"#749da6\"}</item>
+        <item>{title: \"Venner\", image: \"friends\", color: \"#baffc9\"}</item>
+        <item>{title: \"Spill\", image: \"games\", color: \"#8cc168\"}</item>
+        <item>{title: \"Glad\", image: \"happy\", color: \"#fad54f\"}</item>
+        <item>{title: \"Sulten\", image: \"hungry\", color: \"#fadab7\"}</item>
+        <item>{title: \"Samtale\", image: \"onthephone\", color: \"#2dc080\"}</item>
+        <item>{title: \"Fest\", image: \"party\", color: \"#b582fa\"}</item>
+        <item>{title: \"PC\", image: \"pc\", color: \"#28a690\"}</item>
+        <item>{title: \"Lesing\", image: \"reading\", color: \"#d68572\"}</item>
+        <item>{title: \"Sliten\", image: \"tired\", color: \"#9dd5c0\"}</item>
+        <item>{title: \"Rutine\", image: \"rutine\", color: \"#f39051\"}</item>
+        <item>{title: \"Sex\", image: \"sex\", color: \"#f39cc3\"}</item>
+        <item>{title: \"Stressa\", image: \"stressed\", color: \"#27a4dd\"}</item>
+        <item>{title: \"Media\", image: \"tv\", color: \"#8cd8fa\"}</item>
+        <item>{title: \"Tur\", image: \"walking\", color: \"#bcf59f\"}</item>
+        <item>{title: \"Jobb\", image: \"work\", color: \"#6f8a09\"}</item>
+        <item>{title: \"Redd\", image: \"scared\", color: \"#4880a6\"}</item>
+
+        <item>{title: \"Film\", image: \"movie\", color: \"#59ddc7\"}</item>
+        <item>{title: \"Økonomi\", image: \"economy\", color: \"#59dd8a\"}</item>
+        <item>{title: \"Kveldstid\", image: \"evening\", color: \"#bae1ff\"}</item>
+        <item>{title: \"Eksponering\", image: \"exposure\", color: \"#c3cb71\"}</item>
+        <item>{title: \"Ensom\", image: \"lonely\", color: \"#5a5255\"}</item>
+        <item>{title: \"Møte\", image: \"meeting\", color: \"#84869f\"}</item>
+        <item>{title: \"Morgen\", image: \"morning\", color: \"#ffb3ba\"}</item>
+        <item>{title: \"Rastløs\", image: \"restless\", color: \"#f2654e\"}</item>
+        <item>{title: \"Belønning\", image: \"reward\", color: \"#bbf29b\"}</item>
+        <item>{title: \"Trening\", image: \"training\", color: \"#ffffba\"}</item>
+        <item>{title: \"Været\", image: \"weather\", color: \"#b8dbd3\"}</item>
+
+        <item>{title: \"Angst\", image: \"anxiety\", color: \"#9c5d6e\"}</item>
+        <item>{title: \"Musikk\", image: \"music\", color: \"#8cd8fa\"}</item>
+        <item>{title: \"Søvn\", image: \"sleep\", color: \"#779ecb\"}</item>
+        <item>{title: \"Ferie\", image: \"vacation\", color: \"#fed1db\"}</item>
+        <item>{title: \"Syk\", image: \"sick\", color: \"#7e9583\"}</item>
+        <item>{title: \"Tomhet\", image: \"emptyness\", color: \"#b6a5c7\"}</item>
+    </string-array>
+
+    <string-array name="daily_themes">
+        <item>Det er vanlig å oppleve noe ubehag helt i starten av slutteprossessen. Dette kan være svetting, rastløshet, dårlig matlyst og søvnproblemer.\n\nHva kan du selv gjøre for å dempe og lindre ubehaget? \nHva har du gjort tidligere som har fungert når du har hatt pauser?</item>
+        <item>De fysiske abstinenssymptomene er sterkest første uka du slutter og kan vare i rundt 2–3 uker. Søvnproblemer, mareritt og russug kan vare noe lenger.\n\nHva tror du selv vil være bra å gjøre når du opplever spesifikke abstinenser?\nHar du opplevd andre utfordringer i livet og gjort konkrete ting som har hjulpet deg?</item>
+        <item>Hva er dine hovedgrunner til at du har sluttet med cannabis?\nDet kan være nyttig å notere ned for deg selv de tre viktigste grunner til at du nå vil slutte med cannabis. Dersom dette programmet viser seg å være veldig vellykket, hvordan har du det om 8 uker? Skriv ned dine mål for slutteprosessen.</item>
+        <item>Hvilke situasjoner, følelser og mennesker kan trigge lysten til å røyke? Hvem pleier du å røyke med?\n\nTenk gjennom hva du kan gjøre når suget kommer. Finnes det noen måter du kan avlede suget på når det er sterkt?\n\nDu kan lese om tips til å håndtere suget under informasjonsfanen.</item>
+        <item>Hvordan skal du forholde deg til dine røykevenner i starten av slutteprosessen? Dette er viktig å tenke gjennom. Mange kan være ekstra sårbare de første ukene de har sluttet og det er lett å bli fristet til å røyke om de er sammen med andre som røyker.</item>
+        <item>Har du prøvd å slutte før? Hva var motivasjonen din da? Hvilke strategier fungerte? Hva var det som gjorde at du begynte å røyke igjen (triggere / risikosituasjoner)? Sjekk gjerne ut triggerdagboken i appen, for å få en oversikt over hva du opplever at hjelper deg eller trigger deg.</item>
+        <item>Husk at det du opplever av fysisk ubehag nå er abstinenssymptomer. Dette er kun en overgangsfase siden du har sluttet med cannabis. Det er ikke sånn du er som person når du ikke røyker. Det vil gå over og bli bedre. Hold ut! Når det har gått tre uker er du over kneika med fysiske abstinenssymptomer og angst.</item>
+        <item>Øvelse En måte å forebygge sprekk ved russug, er å utforske egne tanker som kan bidra til tilbakefall. Et eksempel er å lage en unnskyldningsliste slik at du kan oppdage mulige tanker som kan bidra til sprekk. Tenk gjennom tre unnskyldninger du har hatt / kan ha som unnskyldning til å røyke.</item>
+        <item>Er det noen interesser eller aktiviteter du ønsker å fordype deg i? Er det noen hobbyer du har drevet med før som du kunne tenke deg oppta?</item>
+        <item>Hvilke risikosituasjoner (situasjoner som kan trigge suget etter å røyke) kan du unngå? Hvilke situasjoner er uungåelige? Hvordan kan du møte disse? Skriv gjerne ned strategier.</item>
+        <item>Hva tror du at dine nærmeste synes om at du slutter med cannabis? Er det noen rundt deg du tror vil støtte deg i slutteprossesen?</item>
+        <item>Har du merket noen endringer siden du sluttet? Legg merke til hvordan morgenen din er idag sammenlignet med når du røyket. Se om det er noen endringer i ditt energinivå, i måten du kommuniserer med andre på, hvordan du har det inni deg, hvordan du har det når du sitter på bussen, går ute, handler etc. Prøv å legge merke til været ute, omgivelsene dine, menneskene rundt deg, pusten din, tilstedeværelsen din her og nå.</item>
+        <item>Gratulerer, du er kommet til fase 2! Det er vanlig å oppleve svingninger i humøret i denne fasen. Følelser kan forsterkes og det kan føre til at du noen ganger lettere overreagerer eller tar deg nær av det som blir sagt. Noen kan lettere havne i krangler eller konflikter med de nærmeste.</item>
+        <item>Dersom du blir overmannet av sterke følelser eller angst, prøv å stoppe litt opp, puste dypt og tenk etter hva som skjer med deg. Ta et steg ut av situasjonen og forsøk å se deg selv utenfra. Minn deg selv på at følelsene ofte forsterkes og kan virke overveldene. Dette skjer fordi THC er på vei ut av kroppen og ikke lenger har en dempende virkning på følelsene. Følelser vil derfor velte “usortert” ut. Dette er ikke deg som person, men abstinenssymptomer. Hold ut. Følelsene vil roe seg mer når du kommer over i fase 3 (fra Dag 22).</item>
+        <item>Det kan være lurt å utsette å ta store avgjørelser. Ta en dag av gangen. Husk at det vil bli bedre.</item>
+        <item>Legg merke til følelsene dine. I hvilke situasjoner oppstår de? Hva slags intensitet er det? Hva gjør de med deg? På hvilken måte styrer de handlingene dine? Legg merke til gode løsningsstrategier.</item>
+        <item>Om du opplever at du blir overmannet av negative tanker rundt en hendelse eller situasjon, kan du forsøke å stille spørsmålene Er mine tanker om situasjonen rimelige? Finnes det noen alternative måter å tolke situasjonen på?  De tanker man gjør seg om en hendelse påvirker hvordan man føler det, kroppslige fornemmelser og atferd.</item>
+        <item>Hvilken følelse har du kjent mest på de siste dagene? Hvordan uttrykker du denne følelsen (ansiktsuttrykk, ord, kroppsspråk)? Hvor kjenner du den i kroppen din? Hvilken farge har den? Hva sier den?</item>
+        <item>Det er vanlig å oppleve følelser av ensomhet, isolasjon, forlatthet og sinne i denne fasen, men også øyeblikk av lykke og oppstemthet.</item>
+        <item>Merker du noen forandringer i måten som du fungerer på? Hvordan er din hjemmesituasjon (med samboer, foreldre, venner)?</item>
+        <item>På en scala fra 0–5 hvor 0= ”svært misfornøyd” og 5= “veldig fornøyd”, totalt sett hvor fornøyd er du med livet ditt nå?</item>
+        <item>Gratulerer, du har kommet til fase 3! Denne fasen handler om å bygge nettverk og identitet, og fokusere på fremtiden. Her jobber vi for å forhindre tilbakefall.</item>
+        <item>En del merker at konsentrasjonen og oppmerksomheten blir bedre etter 3 til 4 uker. Har du merket noen bedringer?</item>
+        <item>Noen kan slite med å finne ord til å beskrive hva de tenker og føler når det røyker. Mange opplever en bedring ved å slutte. Legg merke til om du finner ordene lettere og klarer å beskrive bedre hva du tenker og føler.</item>
+        <item>Kortidshukommelsen kan bli dårligere når man røyker cannabis over tid. Ofte vil man merke at denne blir bedre og normaliseres etter 4–8 uker.</item>
+        <item>Rutinene kan skli ut når man røyker mye cannabis over tid. Mange opplever at rutiner kommer naturlig tilbake når de slutter og trives med å få mer rutiner i hverdagen. Har du en rutine som er viktig for deg? Merker du at det har blitt lettere å komme inn i små rutiner som å pusse tenner om kvelden og å stå opp til samme tid?</item>
+        <item>Husk tilbake på dine hovedmotivasjoner som du hadde for å slutte med cannabis. Hva er hovedgrunnen til at du vil fortsette å slutte? Har det kommet noen nye grunner til at du vil opprettholde sluttingen?</item>
+        <item>Hva er du fornøyd med ved deg selv? Hvilke ressurser har du som har hjulpet deg i denne slutteprosessen?</item>
+        <item>Har du merket forskjell på hvordan du kommuniserer med andre? Merker du noe annerledes når du snakker med venner / kollegaer / familie / kjæreste? Ofte vil kommunikasjonen med andre endre seg ved at man lytter og tenker mer før man snakker.</item>
+        <item>Hvordan er det når du snakker med dine røykevenner? Ofte kan det bli mye monolog fremfor dialog når man røyker.</item>
+        <item>Hva er dine tre viktigste mål for de neste seks månedene?</item>
+        <item>Dersom du skulle velge en verdi og ta med deg videre i livet ditt, hvilken velger du? Skriv ned tre viktige verdier for deg.</item>
+        <item>Hvem ønsker du å ha nærere i livet ditt, og hvem ønsker du å være mindre sammen med? Hvilke venner er røykevenner og hvem av dem kan du gjøre andre ting sammen med? Er det noen personer som har vært viktige tidligere i livet som du kan ta kontakt med igjen?</item>
+        <item>Hvordan skal du forholde deg til de i ditt nettverk som bruker cannabis? Noen kan oppleve sorg og negative sider ved tap av nettverk når de tar et valg om å slutte eller ha en lengre pause i cannabisbruken. Hvordan er dette for deg? Finnes det noen andre arenaer i ditt liv hvor du kan bli kjent med andre mennesker? (skole, jobb, hobbyer).</item>
+        <item>Er det noen personer i livet ditt som du beundrer? Hva er det med disse som er viktig for deg?</item>
+        <item>Hvordan opplever du at du fungerer i hverdagen? Føler du at du hører hjemme i samfunnet? Merker du endringer i måten å fungere på?</item>
+        <item>Hvilke personer i livet ditt er viktige for deg? Hvem ønsker du å ha mer kontakt med? Er det noen personer du ønsker å ta mer avstand til?</item>
+        <item>Merker du noen endringer ved deg selv nå sammenlignet med når du røyket? Dette kan for eksempel være hvordan du har det, hvordan du fungerer i hverdagen, eller hvordan du er sammen med andre mennesker. Har dine foreldre, venner, kollegaer, kjæreste lagt merke til noen forandringer ved deg?</item>
+        <item>Hvilke venner er det som gir deg positiv energi, støtte og utfordringer? Er det noen venner som ikke er bra for deg?</item>
+        <item>Tenk gjennom hva du kan gjøre for å ha mer kontakt med de i livet som er bra for deg.</item>
+        <item>Ofte kan det oppstå et tomrom når man slutter med cannabis. For mange har cannabis vært en nær venn. Derfor er det viktig å fokusere på nytt innhold i livet. Har du funnet en ny hobby eller aktivitet? Hva liker du å gjøre? Hva gir deg god energi? Er det noe du er nysgjerrig på som du kunne tenke deg å starte med?</item>
+        <item>Ofte kan tidsopplevelsen endre seg i løpet av slutteprosessen, noen vil kunne oppleve at ting går raskere eller tregere.</item>
+        <item>Hva innebærer glede for deg? Hva gjør deg glad? Legg merke til hva som gjør deg glad i løpet av en dag. Hvordan kommer gleden til uttrykk hos deg? Hvilken farge har gleden, hvor i kroppen sitter den, hva sier den?</item>
+        <item>Tenk gjennom tre gode egenskaper / ressurser som du har. Hva sier dine nærmeste at de liker best ved deg?</item>
+        <item>Når man slutter med cannabis trenger noen å finne tilbake til sin gamle identitet eller skape en ny identitet. Hvem var du før du begynte å røyke cannabis? Hvem ønsker du å være?</item>
+        <item>Noen kan bli utålmodige og rastløse i denne fasen og ønske å få på plass alt i livet på en gang. Her er det viktig å ta en ting om gangen og prøve å være tålmodig.</item>
+        <item>Har du merket noen forskjeller ved deg selv siden du slutta med cannabis? Hvordan hadde du det for en uke siden sammenlignet med nå? Hva er den viktigste endringen du opplever siden du sluttet?</item>
+        <item>Mange opplever bedre konsentrasjon noen uker etter å ha sluttet med cannabis. Det vil bli lettere å forstå situasjoner i sammenheng, og lettere å løse konflikter. Hvordan er det for deg?</item>
+        <item>Har du opplevd situasjoner og følelser hvor du vanligvis ville ha røyket, men hvor du gjorde noe annerledes? Hva gjorde du istedenfor å røyke? Hva var det i situasjonen som gjorde at du valgte annerledes? Var det noe du sa til deg selv eller tenkte? Hvordan føltes det å velge annerledes?</item>
+        <item>Dersom du skrev ned noen mål du satte deg da du startet, finn fram disse nå. Har du nådd disse målene? Har noen av målene dine endret seg?</item>
+        <item>Hvor ser du deg selv om fem år? Se flere spørsmål om mål for fremtiden under sosialt fokus.</item>
+        <item>Hvilket verdier verdsetter du høyest fra din egen oppvekst og vil ta med deg videre? Hva vil du kvitte deg med? Hvordan vil du være mot andre og mot deg selv?</item>
+        <item>Hvordan ser du for deg at ditt forhold til cannabis vil være i fremtiden? Prøv å se for deg hvordan livet ditt vil være med og uten cannabis.</item>
+        <item>Cannabis kan for endel knyttes til ens identitet. Hva innebærer identitet for deg? Merker du noen endringer på din identitet før og nå?  Hvem var du når du røyket? Hvem er du nå? Hvem ønsker du å være?</item>
+        <item>På en skala fra 0–5 hvor 0= ”svært misfornøyd” og 5= “veldig fornøyd”, totalt sett hvor fornøyd er du med livet ditt nå? Har du opplevd endring siden du sluttet?</item>
+        <item>Gratulerer du har fullført hele programmet! Du har god grunn til å være stolt over deg selv!</item>
+    </string-array>
+
+    <array name="objects_3d">
+        <item>@raw/cerebral_cortex</item>
+        <item>@raw/brain_stem</item>
+        <item>@raw/hippocampus_outline</item>
+        <item>@raw/backside_brain</item>
+        <item>@raw/prefrontal_cortex</item>
+        <item>@raw/little_brain</item>
+        <item>@raw/amygdala</item>
+        <item>@raw/hippocampus</item>
+        <item>@raw/reward_path</item>
+    </array>
+
+    <string-array name="brain_clicked_strings">
+        <item>Fremre hjernebark</item>
+        <item>Lillehjernen</item>
+        <item>Amygdala</item>
+        <item>Hippocampus</item>
+        <item>Belønningsbanen</item>
+    </string-array>
+
+    <string-array name="brain_clicked_info">
+        <item>Dette området er et av de mest avanserte områdene i hjernen. Her har vi eksekutive funksjoner, som blant annet omfatter evne til å skifte perspektiv, til planlegging og til organisering. Evnen til å ta valg og reflektere, impulshåndtering og til å tenke konsekvenser lokaliseres også i dette området. Dersom man bruker cannabis over tid, vil dette området få mindre aktivitet ved at reseptorene nedreguleres. Ved målemetoder som måler blodtilstrømning i hjernen og billeddiagnostikk har man observert endret aktivitet og blodstrømning i hjernedeler med cannabisreseptorer. Cannabisbruk kan redusere den kognitive fleksibiliteten som er viktig for endringsprosesser. Den fremre hjernebarken er ikke ferdig utviklet i tenårene. Regelmessig cannabisrøyking i tenårene kan påvirke tenåringshjernens modningsprosesser.</item>
+        <item>Lillehjernen er ansvarlig for å koordinere forskjellige muskelbevegelser som for eksempel å styre finmotorikken og kontrollere balanseevnen. Under cannabisrus vil du kunne oppleve at balansen er ustø, og det å utføre oppgaver som findetaljert arbeid er vanskeligere.  THC medfører reduserte kjøreferdigheter og gir økt risiko for trafikkulykker. Risikoen for å forårsake trafikkulykker øker med økende konsentrasjoner av THC. </item>
+        <item>Amygdala er en liten struktur lokalisert dypt inne i temporallappen i hjernen. Den er en limbisk systemstruktur som er involvert i mange av våre emosjoner og motivasjon, spesielt relatert til overlevelse. Amygdala er involvert i emosjoner som frykt, sinne og nytelse. Når man røyker cannabis, skrus «volumknappen» i amygdala opp og forsterker følelsene. Dette kan være både følelser som glede, interesse og overraskelse, samt følelser som paranoia, bekymring og angst.</item>
+        <item>Hippocampus er hukommelsessentralen eller “bibliotekaren” i hjernen, og knutepunktet for alle typer læring. Reseptorene nedreguleres i dette området dersom man røyker cannabis over tid. Kortidshukommelsen kan svekkes ved røyking av cannabis, både under selve rusen, og om man røyker jevnlig over tid. Forskning viser at reseptorene i dette og andre områder i hjernen fortsetter å nedreguleres etter at man slutter, men reguleres opp igjen i løpet av en måneds avholdenhet. Kliniske erfaringer tyder på at mange får bedre korttidshukommelse igjen etter å ha sluttet med cannabis i tre til fem uker.</item>
+        <item>Hver gang du bruker cannabis, vil THC aktivere belønningsbanen ved at det skilles ut dopamin. (Dopamin er et hormon som gir  positive følelser i kroppen). Denne påvirkningen vil for de aller fleste ledsages av en følelse av velvære, belønning og glede. Dette og nærliggende hjerneområder har som normalfunksjon å regulere atferd knyttet til motivasjon, lyst og glede ved viktige aktiviteter. Det kan være det å ta vare på seg selv som individ, drikke når man er tørst og spise når man er sulten. En annen funksjon er også videreføring av arten, ved at disse hjerneområdene blir aktivisert i forbindelse med lyst og glede knyttet til seksuell aktivitet og til pleie og omsorg for avkommet. Rusmidler «kaprer» dette området i hjernen og stimulerer det kraftigere enn naturlige stimuli. Hjernen kan lures til å tro at rusmidlene man bruker er livsviktige, og betydningen av rusmiddelet blir større over tid om man bruker det jevnlig. Ved langvarig cannabisbruk vil hjernens evne til å produsere og skille ut dopamin bli nedregulert. Derfor er det vanlig å oppleve nedstemthet og savn i en periode etter at man har sluttet. Vanligvis går dette over etter noen måneder når dopaminlagrene har oppjustert seg igjen. Du kan aktivt gjøre ting som vil påvirke dette området positivt etter å ha sluttet med cannabis. Det kan være å trene, spise god mat, ha fokus på velværeaktiviteter som massasje, ta et varmt bad, avslapningsøvelser, være ute i naturen, le, nyte en solnedgang etc.</item>
+    </string-array>
+</resources>
