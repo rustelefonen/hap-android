@@ -53,7 +53,7 @@ public class InfoDetailActivity extends OrmLiteActivity {
         if (helpInfoName == null) return;
 
         InfoDao infoDao = new InfoDao(this);
-        Info info = infoDao.getInfoByName(helpInfoName);
+        Info info = infoDao.getInfoByTitle(helpInfoName);
         if(info != null){
             Intent intent = new Intent(this, InfoDetailActivity.class);
             intent.putExtra(HELP_INFO_ID_EXTRA, info);

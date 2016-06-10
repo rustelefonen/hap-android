@@ -54,7 +54,7 @@ public class InfoTab extends TabPage{
 
     private void populateList() {
         InfoDao infoDao = new InfoDao((OrmLiteActivity) getActivity());
-        final List<Category> items = infoDao.getAllInfoCategories(false);
+        final List<Category> items = infoDao.getAllInfoCategories();
         InfoCategoryAdapter infoCategoryAdapter = new InfoCategoryAdapter(items, new View.OnClickListener() {
             @Override
             public void onClick(View v) {

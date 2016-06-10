@@ -59,15 +59,15 @@ public class InfoCrudTest {
     }
 
 
-    @Test
-    public void stage2_FetchCategoriesWithoutInfoPages() throws Exception {
-        List<Category> categoryList = infoDao.getAllInfoCategories(false);
-        assertTrue("Should now contain elements", categoryList.size() > 0);
-    }
+//    @Test
+//    public void stage2_FetchCategoriesWithoutInfoPages() throws Exception {
+//        List<Category> categoryList = infoDao.getAllInfoCategories(false);
+//        assertTrue("Should now contain elements", categoryList.size() > 0);
+//    }
 
     @Test
     public void stage3_FetchCategoriesWithInfoPages() throws Exception {
-        List<Category> categoryList = infoDao.getAllInfoCategories(true);
+        List<Category> categoryList = infoDao.getAllInfoCategories();
         List<List<Info>> infos = new ArrayList<>();
         for (Category c : categoryList) {
             // Log.e("Category", c.getTitle());
@@ -91,7 +91,7 @@ public class InfoCrudTest {
 
     @Test
     public void stage5_GetCategoryCount() throws Exception {
-        assertTrue("There should exist helpinfocategories", infoDao.getAllInfoCategories(false).size() > 0);
+        assertTrue("There should exist helpinfocategories", infoDao.getAllInfoCategories().size() > 0);
     }
 
     @Test
@@ -103,13 +103,13 @@ public class InfoCrudTest {
 
     @Test
     public void stage7_GetCategoryByName() throws Exception {
-        Category helpCategory = infoDao.getCategoryByName("hjernen");
+        Category helpCategory = infoDao.getCategoryByTitle("hjernen");
         assertTrue("Should match", "hjernen".equalsIgnoreCase(helpCategory.getTitle()));
     }
 
     @Test
     public void stage9_GetHelpInfoPageByName() throws Exception {
-        Info helpInfo = infoDao.getInfoByName("3d-hjernen");
+        Info helpInfo = infoDao.getInfoByTitle("3d-hjernen");
         assertTrue("Should match", "3d-hjernen".equalsIgnoreCase(helpInfo.getTitle()));
     }
 

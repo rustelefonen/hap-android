@@ -134,7 +134,7 @@ public class ProgramTab extends TabPage {
         graph.setSectionListener(new Graph.OnSelectSectionListener() {
             @Override public void onSelect(int sectionIndex) {
                 InfoDao infoDao = new InfoDao(mainActivity);
-                Info info = infoDao.getInfoByName(sections.get(sectionIndex).label+"%");
+                Info info = infoDao.getInfoByTitle(sections.get(sectionIndex).label+"%");
                 if(info != null){
                     Intent intent = new Intent(getContext(), InfoDetailActivity.class);
                     intent.putExtra(InfoDetailActivity.HELP_INFO_ID_EXTRA, info.getId());

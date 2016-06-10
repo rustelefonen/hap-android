@@ -38,6 +38,11 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * @param info the entity to be persisted
+     * @return the same entity as passed by param, id should now be set
+     * @throws RuntimeException in case of SQLException
+     */
     public Info persist(Info info) {
         if (info == null) return null;
 
@@ -49,6 +54,11 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * @param category the entity to be persisted
+     * @return the same entity as passed by param, id should now be set
+     * @throws RuntimeException in case of SQLException
+     */
     public Category persist(Category category) {
         if (category == null) return null;
 
@@ -65,6 +75,10 @@ public class InfoDao extends OrmLiteDao {
         return category;
     }
 
+    /**
+     * @param info the entity to be deleted
+     * @throws RuntimeException in case of SQLException
+     */
     public void delete(Info info) {
         if (info == null) return;
 
@@ -75,6 +89,10 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * @param category the entity to be deleted
+     * @throws RuntimeException in case of SQLException
+     */
     public void delete(Category category) {
         if (category == null) return;
 
@@ -89,6 +107,11 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * @param id the info entity id
+     * @return the info entity associated with the passed id, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
     public Info getInfoById(int id) {
         try {
             Info info = helpInfoDao.queryForId(id);
@@ -102,21 +125,37 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
-    public Info getInfoByName(String helpInfoName) {
+    /**
+     * @param infoTitle the info entity title
+     * @return the info entity associated with the passed title, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
+    public Info getInfoByTitle(String infoTitle) {
         try {
             return helpInfoDao.queryBuilder()
                     .where()
-                    .like(Info.INFO_TITLE_COLOUMN, helpInfoName)
+                    .like(Info.INFO_TITLE_COLOUMN, infoTitle)
                     .queryForFirst();
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
     }
 
+    /**
+     * Same as calling  {@link #searchInfoTitles(String, boolean true)}
+     * @return List of Info entities with title containing value
+     * @throws RuntimeException in case of SQLException
+     */
     public List<Info> searchInfoTitles(String value){
         return searchInfoTitles(value, true);
     }
 
+    /**
+     * @param value title search string
+     * @param excludeHtmlContent whether or not to fetch the whole htmlContant string of the entities
+     * @return List of Info entities with title containing value
+     * @throws RuntimeException in case of SQLException
+     */
     public List<Info> searchInfoTitles(String value, boolean excludeHtmlContent) {
         try {
             QueryBuilder<Info, Integer> builder = helpInfoDao.queryBuilder();
@@ -130,15 +169,26 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
-    public Category getCategoryByName(String categoryName){
-        return getCategoryByName(categoryName, true);
+    /**
+     * Same as calling {@link #getCategoryByTitle(String, boolean true)}
+     * @param categoryTitle the category entity title
+     * @return the category entity associated with the passed title, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
+    public Category getCategoryByTitle(String categoryTitle){
+        return getCategoryByTitle(categoryTitle, true);
     }
 
-    public Category getCategoryByName(String categoryName, boolean excludeHtmlContent) {
+    /**
+     * @param categoryTitle the category entity title
+     * @return the category entity associated with the passed title, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
+    public Category getCategoryByTitle(String categoryTitle, boolean excludeHtmlContent) {
         try {
             Category category = categoryDao.queryBuilder()
                     .where()
-                    .like(Category.CATEGORY_TITLE_COLOUMN, categoryName)
+                    .like(Category.CATEGORY_TITLE_COLOUMN, categoryTitle)
                     .queryForFirst();
             if (category == null) return null;
 
@@ -149,10 +199,22 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * Same as calling {@link #getCategoryById(int, boolean true)}
+     * @param id the category entity id
+     * @return the category entity associated with the passed id, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
     public Category getCategoryById(int id){
         return getCategoryById(id, true);
     }
 
+    /**
+     * @param id the category entity id
+     * @param excludeHtmlContent whether or not to fetch the whole htmlContant string of the entities
+     * @return the category entity associated with the passed id, or null if not found
+     * @throws RuntimeException in case of SQLException
+     */
     public Category getCategoryById(int id, boolean excludeHtmlContent) {
         try {
             Category category = categoryDao.queryForId(id);
@@ -165,6 +227,10 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
+    /**
+     * @return List of all info entities in the db
+     * @throws RuntimeException in case of SQLException
+     */
     public List<Info> getAllInfos() {
         try {
             List<Info> infoList = helpInfoDao.queryForAll();
@@ -180,16 +246,27 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
-    public List<Category> getAllInfoCategories(boolean fetchSubInfos) {
+    /**
+     * @return List of all category entities in the db, excluding their htmlContent
+     * @throws RuntimeException in case of SQLException
+     */
+    public List<Category> getAllInfoCategories() {
+        return getAllInfoCategories(true);
+    }
+
+    /**
+     * @param excludeSubInfosHtmlContent whether or not to fetch the info entities html content
+     * @return List of all category entities in the db
+     * @throws RuntimeException in case of SQLException
+     */
+    public List<Category> getAllInfoCategories(boolean excludeSubInfosHtmlContent) {
         try {
             List<Category> categories =  categoryDao.queryBuilder()
                     .orderBy(Category.CATEGORY_ORDER_FIELD, true)
                     .query();
 
-            if(fetchSubInfos){
-                for(Category category : categories){
-                    category.setInfoList(fetchInfoForCategory(category, true));
-                }
+            for(Category category : categories){
+                category.setInfoList(fetchInfoForCategory(category, excludeSubInfosHtmlContent));
             }
 
             return categories;
@@ -198,18 +275,19 @@ public class InfoDao extends OrmLiteDao {
         }
     }
 
-    private List<Info> fetchInfoForCategory(Category category, boolean excludeHtmlContent) {
-        try {
-            QueryBuilder<Info, Integer> builder = helpInfoDao.queryBuilder();
-            if(excludeHtmlContent) builder = builder.selectColumns(Info.INFO_TITLE_COLOUMN, Info.INFO_CATEGORY_ID);
+    /**
+     * @param category The entity for which to fetch associated info entities
+     * @param excludeHtmlContent whether or not to exclude the htmlContent string of the info entities
+     * @return List of info entities associated the the passed category
+     * @throws SQLException
+     */
+    private List<Info> fetchInfoForCategory(Category category, boolean excludeHtmlContent) throws SQLException {
+        QueryBuilder<Info, Integer> builder = helpInfoDao.queryBuilder();
+        if(excludeHtmlContent) builder = builder.selectColumns(Info.INFO_TITLE_COLOUMN, Info.INFO_CATEGORY_ID);
 
-
-            return builder.orderBy(Info.INFO_TITLE_COLOUMN, true)
-                    .where()
-                    .eq(Info.INFO_CATEGORY_ID, category.getId())
-                    .query();
-        } catch (SQLException e) {
-            throw new RuntimeException(e.getMessage());
-        }
+        return builder.orderBy(Info.INFO_TITLE_COLOUMN, true)
+                .where()
+                .eq(Info.INFO_CATEGORY_ID, category.getId())
+                .query();
     }
 }

@@ -36,7 +36,7 @@ public class RemoteInfoDataSource {
 
     public RemoteInfoDataSource(OrmLiteActivity ormLiteActivity) {
         infoDao = new InfoDao(ormLiteActivity);
-        localCategories = infoDao.getAllInfoCategories(false);
+        localCategories = infoDao.getAllInfoCategories();
 
         remoteService = new Retrofit.Builder()
                 .baseUrl(SERVER_URL)
