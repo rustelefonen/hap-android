@@ -21,8 +21,10 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import no.rustelefonen.hap.R;
 import no.rustelefonen.hap.entities.Category;
+import no.rustelefonen.hap.entities.Info;
 import no.rustelefonen.hap.lists.misc.DividerItemDecoration;
 import no.rustelefonen.hap.main.tabs.info.adapters.InfoCategoryAdapter;
+import no.rustelefonen.hap.main.tabs.info.brain.BrainActivity;
 import no.rustelefonen.hap.persistence.OrmLiteActivity;
 import no.rustelefonen.hap.persistence.dao.InfoDao;
 import no.rustelefonen.hap.tabs.misc.TabPage;
@@ -59,8 +61,20 @@ public class InfoTab extends TabPage{
             @Override
             public void onClick(View v) {
                 int position = recyclerView.getChildAdapterPosition(v);
-                Intent intent = new Intent(getContext(), InfoCategoryActivity.class);
-                intent.putExtra(InfoCategoryActivity.CATEGORY_ID_EXTRA, items.get(position).getId());
+                Intent intent;
+                List<Info> infoList = items.get(position).getInfoList();
+                if (infoList.size() <= 1) {
+                    Info selectedInfo = infoList.get(0);
+                    if(selectedInfo.getTitle().equalsIgnoreCase("3d-hjernen")){
+                        intent = new Intent(getContext(), BrainActivity.class);
+                    } else {
+                        intent = new Intent(getContext(), InfoDetailActivity.class);
+                        intent.putExtra(InfoDetailActivity.HELP_INFO_ID_EXTRA, selectedInfo.getId());
+                    }
+                } else {
+                    intent = new Intent(getContext(), InfoCategoryActivity.class);
+                    intent.putExtra(InfoCategoryActivity.CATEGORY_ID_EXTRA, items.get(position).getId());
+                }
                 startActivity(intent);
             }
         });

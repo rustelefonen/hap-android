@@ -17,6 +17,7 @@ import no.rustelefonen.hap.server.RemoteInfoDataSource;
  */
 public class SplashActivity extends OrmLiteActivity {
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
