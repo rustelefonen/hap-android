@@ -32,3 +32,11 @@
 -keep class **.R$* {
     <fields>;
 }
+
+-dontwarn org.apache.http.**
+-dontwarn android.net.http.AndroidHttpClient
+-dontwarn com.google.android.gms.**
+-dontwarn com.android.volley.toolbox.**
+-dontwarn okio.**
+-dontwarn com.google.common.**
+-dontwarn com.github.mikephil.charting.data.**
