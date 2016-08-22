@@ -40,3 +40,13 @@
 -dontwarn okio.**
 -dontwarn com.google.common.**
 -dontwarn com.github.mikephil.charting.data.**
+
+-keep class com.j256.**
+-keepclassmembers class com.j256.** { *; }
+-keep enum com.j256.**
+-keepclassmembers enum com.j256.** { *; }
+-keep interface com.j256.**
+-keepclassmembers interface com.j256.** { *; }
+-keepclassmembers class * {
+  public <init>(android.content.Context);
+}
