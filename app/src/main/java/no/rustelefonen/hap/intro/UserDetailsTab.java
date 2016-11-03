@@ -3,6 +3,7 @@ package no.rustelefonen.hap.intro;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Range;
@@ -29,6 +30,7 @@ import no.rustelefonen.hap.R;
 import no.rustelefonen.hap.entities.User;
 import no.rustelefonen.hap.entities.User;
 import no.rustelefonen.hap.tabs.misc.TabPage;
+import no.rustelefonen.hap.util.DialogHelper;
 import no.rustelefonen.hap.util.ViewCallback;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
@@ -147,18 +149,24 @@ public class UserDetailsTab extends TabPage {
 
     @OnClick({R.id.intro_start_program_without_details, R.id.intro_start_program_with_details})
     public void startProgram() {
-        int ageInt = firstNonNull(tryParse(ageSpinner.getSelectedItem().toString()), -1); //first index is placeholder, and will fail parse
-        User.Gender selectedGender = extractGender();
-        String stateString = extractCountyString();
+        DialogHelper.showConfirmDialogWithAction(getActivity(), "Personvernerklæring", "For å optimalisere appen ber vi om at du oppgir alder, kjønn og fylke. Denne informasjonen er frivillig å oppgi, og vil sendes til en lukket server hos RUStelefonen. Du vil ikke kunne identifiseres. All øvrig informasjon du legger til i appen vil kun registreres på din telefon og blir kryptert. Dette gjelder alle versjoner i iOS og versjoner fra og med 5.0 (lollipop) i Android. Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren rustelefonen: https://github.com/rustelefonen.", "Aksepterer", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                int ageInt = firstNonNull(tryParse(ageSpinner.getSelectedItem().toString()), -1); //first index is placeholder, and will fail parse
+                User.Gender selectedGender = extractGender();
+                String stateString = extractCountyString();
 
-        //no values selected, no need to send
-        if(ageInt == -1 && selectedGender == null && stateString == null){
-            researchSwitch.setChecked(false);
-        }
+                //no values selected, no need to send
+                if(ageInt == -1 && selectedGender == null && stateString == null){
+                    researchSwitch.setChecked(false);
+                }
 
-        boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
-        UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString);
-        introActivity.saveDetailsAndStartProgram(userDetailsValues);
+                boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
+                UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString);
+                introActivity.saveDetailsAndStartProgram(userDetailsValues);
+            }
+        });
+
     }
 
     private User.Gender extractGender(){
