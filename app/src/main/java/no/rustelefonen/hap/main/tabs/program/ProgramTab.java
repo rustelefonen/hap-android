@@ -46,6 +46,7 @@ import no.rustelefonen.hap.entities.User;
 import no.rustelefonen.hap.main.tabs.activity.MainActivity;
 import no.rustelefonen.hap.main.tabs.activity.MainTabPageHandler;
 import no.rustelefonen.hap.main.tabs.info.InfoDetailActivity;
+import no.rustelefonen.hap.persistence.OrmLiteActivity;
 import no.rustelefonen.hap.persistence.dao.InfoDao;
 import no.rustelefonen.hap.tabs.misc.TabPage;
 import no.rustelefonen.hap.util.AnimationListenerAdapter;
@@ -228,8 +229,12 @@ public class ProgramTab extends TabPage {
     public void showDialog(ImageView imageView) {
         switch (imageView.getId()) {
             case R.id.graph_info:
-                showInfoDialog(getActivity(), "Abstinensoversikt", "Graf THC: Denne grafen viser tiden det kan ta for THC-metabolitter å skilles ut av kroppen om du har brukt cannabis regelmessig. Det kan ta opptil seks uker (og i noen tilfeller lengre) før THC-metabolitter er skilt ut av kroppen, dersom du har brukt cannabis over tid.\n\nGraf humørsvingninger: Denne grafen viser hva du kan forvente av humørsvingninger når du slutter med cannabis etter jevnlig bruk.  Grafen er en generell fremstilling, men det vil være individuelle forskjeller i graden av humørsvingninger man vil oppleve når man slutter.\n\nDen røde nålen viser hvor du befinner deg i programmet. Klikk på faseoverskriftene for å lese mer.\n\nGrafene er kun en visuell illustrasjon for at du lettere vil kunne få en oversikt over vanlige utfordringer og abstinenser i en sluttprosess, og for å vise at THC-metabolitter (nedbrytningsprodukter) skilles ut av kroppen over tid. Det er ikke nødvendigvis noe forhold mellom THC grafen og humørsvingninger. Modellen er basert på kliniske erfaringer og empiri. Det vil si brukeres erfaringer med å slutte med cannabis. Dette er ikke en modell som forteller hvordan slutteprosessen fungerer nevrobiologisk.   Modellen er under revidering, og det kan komme endringer og justeringer i denne modellen over tid, når ytterligere kliniske erfaringer vil bli systematisert sammen med forskningen på feltet.");
-                //showInfoDialog(getActivity(), "Abstinensoversikt", "Den ene grafen viser THC-nivået i kroppen din, og tiden som det kan ta før THC skilles ut av kroppen. Den andre grafen viser hva du kan forvente av humørsvingninger.\n\nDen røde nålen viser hvor du befinner deg i programmet. \n\nKlikk på faseoverskriftene for å lese mer.");
+                //showInfoDialog(getActivity(), "Abstinensoversikt", "Graf THC: Denne grafen viser tiden det kan ta for THC-metabolitter å skilles ut av kroppen om du har brukt cannabis regelmessig. Det kan ta opptil seks uker (og i noen tilfeller lengre) før THC-metabolitter er skilt ut av kroppen, dersom du har brukt cannabis over tid.\n\nGraf humørsvingninger: Denne grafen viser hva du kan forvente av humørsvingninger når du slutter med cannabis etter jevnlig bruk.  Grafen er en generell fremstilling, men det vil være individuelle forskjeller i graden av humørsvingninger man vil oppleve når man slutter.\n\nDen røde nålen viser hvor du befinner deg i programmet. Klikk på faseoverskriftene for å lese mer.\n\nGrafene er kun en visuell illustrasjon for at du lettere vil kunne få en oversikt over vanlige utfordringer og abstinenser i en sluttprosess, og for å vise at THC-metabolitter (nedbrytningsprodukter) skilles ut av kroppen over tid. Det er ikke nødvendigvis noe forhold mellom THC grafen og humørsvingninger. Modellen er basert på kliniske erfaringer og empiri. Det vil si brukeres erfaringer med å slutte med cannabis. Dette er ikke en modell som forteller hvordan slutteprosessen fungerer nevrobiologisk.   Modellen er under revidering, og det kan komme endringer og justeringer i denne modellen over tid, når ytterligere kliniske erfaringer vil bli systematisert sammen med forskningen på feltet.");
+                InfoDao infoDao = new InfoDao((OrmLiteActivity) getActivity());
+                Info graphInfo = infoDao.getInfoByTitle("THC-metabolitter");
+                Intent intent = new Intent(getContext(), InfoDetailActivity.class);
+                intent.putExtra(InfoDetailActivity.HELP_INFO_ID_EXTRA, graphInfo.getId());
+                startActivity(intent);
                 break;
             case R.id.avoided_info:
                 showInfoDialog(getActivity(), "Positive triggere", "Dersom du motstår å ruse deg kan du registrere det i triggerdagboken.\n\nOver tid vil dette vinduet gi deg en god oversikt over hva som hjelper best, når suget melder seg.");
