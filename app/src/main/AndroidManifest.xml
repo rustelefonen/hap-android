@@ -157,6 +157,17 @@
                 android:value=".main.tabs.activity.MainActivity" />
         </activity>
 
+        <activity
+            android:screenOrientation="sensorPortrait"
+            android:name=".intro.PrivacyActivity"
+            android:label="Personvernerklæring"
+            android:parentActivityName=".intro.IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".intro.IntroActivity" />
+        </activity>
+
         <receiver android:name=".notifications.AchievementReceiver" />
     </application>
 

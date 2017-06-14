@@ -68,6 +68,7 @@ public class IntroActivity extends OrmLiteActivity {
             user.setAge(userDetailsValues.age);
             user.setCounty(userDetailsValues.county);
             user.setGender(userDetailsValues.gender);
+            user.setUserType(userDetailsValues.userType);
             submitResearchData(user);
         }
 
@@ -121,7 +122,8 @@ public class IntroActivity extends OrmLiteActivity {
                 .build()
                 .create(ResearchRemote.class);
 
-        Call<ResponseBody> call = researchRemote.postResearchData(""+ user.getAge(), user.getGenderAsString(), user.getCounty());
+        Call<ResponseBody> call = researchRemote.postResearchData(""+ user.getAge(), user.getGenderAsString(), user.getCounty(), user.getUserType());
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 getSharedPreferences(UserDetailsTab.INTRO_RESEARCH_SENT, MODE_PRIVATE)
@@ -143,6 +145,7 @@ public class IntroActivity extends OrmLiteActivity {
         @POST("/api/research")
         Call<ResponseBody> postResearchData(@Field("age") String age,
                                             @Field("gender") String gender,
-                                            @Field("county") String county);
+                                            @Field("county") String county,
+                                            @Field("userType") String userType);
     }
 }

@@ -23,6 +23,9 @@ public class SplashActivity extends OrmLiteActivity {
         super.onCreate(savedInstanceState);
 
         UserDao dao = new UserDao(this);
+
+        System.out.println(dao.getFirst());
+
         if (dao.getFirst() != null) startActivity(new Intent(this, MainActivity.class));
         else startActivity(new Intent(this, IntroActivity.class));
 

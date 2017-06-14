@@ -18,7 +18,7 @@ import no.rustelefonen.hap.R;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     public static final String DATABASE_NAME = "hap.db";
-    private static final int DATABASE_VERSION = 149;
+    private static final int DATABASE_VERSION = 150;
     private boolean shouldUpgrade;
     private Context context;
 
@@ -63,6 +63,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         shouldUpgrade = true;
+        /*if (oldVersion < 150){
+            db.execSQL("ALTER TABLE 'UserInfo' ADD COLUMN 'UserType' VARCHAR");
+        }*/
         /*try {
             Log.i(DatabaseHelper.class.getName(), "onUpgrade");
             TableUtils.dropTable(connectionSource, Achievement.class, true);

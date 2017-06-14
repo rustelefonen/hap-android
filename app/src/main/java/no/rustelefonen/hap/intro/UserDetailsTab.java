@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Range;
@@ -46,6 +47,7 @@ public class UserDetailsTab extends TabPage {
     @BindView(R.id.age_list) Spinner ageSpinner;
     @BindView(R.id.gender_list) Spinner genderSpinner;
     @BindView(R.id.county_list) Spinner countySpinner;
+    @BindView(R.id.userType_list) Spinner userTypeSpinner;
     @BindView(R.id.info_research_agree_switch) Switch researchSwitch;
     @BindView(R.id.intro_start_program) TextSwitcher startProgram;
     @BindView(R.id.intro_research_info) TextView infoText;
@@ -65,6 +67,7 @@ public class UserDetailsTab extends TabPage {
         ageSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.spinner_layout, makeAgeList()));
         genderSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.spinner_layout, getResources().getStringArray(R.array.genders)));
         countySpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.spinner_layout, getResources().getStringArray(R.array.counties)));
+        userTypeSpinner.setAdapter(new ArrayAdapter<>(getContext(), R.layout.spinner_layout, getResources().getStringArray(R.array.userTypes)));
 
         return view;
     }
@@ -149,12 +152,13 @@ public class UserDetailsTab extends TabPage {
 
     @OnClick({R.id.intro_start_program_without_details, R.id.intro_start_program_with_details})
     public void startProgram() {
-        DialogHelper.showConfirmDialogWithAction(getActivity(), "Personvernerklæring", "For å optimalisere appen ber vi om at du oppgir alder, kjønn og fylke. Denne informasjonen er frivillig å oppgi, og vil sendes til en lukket server hos RUStelefonen. Du vil ikke kunne identifiseres. All øvrig informasjon du legger til i appen vil kun registreres på din telefon og blir kryptert. Dette gjelder alle versjoner i iOS og versjoner fra og med 5.0 (lollipop) i Android. Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren rustelefonen: https://github.com/rustelefonen.", "Aksepterer", new DialogInterface.OnClickListener() {
+        /*DialogHelper.showConfirmDialogWithAction(getActivity(), "Personvernerklæring", "For å bedre tilpasse appen til våre brukere ber vi om at du oppgir alder, kjønn og fylke. Denne informasjonen er frivillig å oppgi, og vil sendes til en lukket server hos RUStelefonen. Du vil ikke kunne identifiseres. All øvrig informasjon du legger til i appen vil kun registreres på din telefon og blir kryptert. Dette gjelder alle versjoner i iOS og versjoner fra og med 5.0 (lollipop) i Android. Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren rustelefonen: https://github.com/rustelefonen.", "Aksepterer", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 int ageInt = firstNonNull(tryParse(ageSpinner.getSelectedItem().toString()), -1); //first index is placeholder, and will fail parse
                 User.Gender selectedGender = extractGender();
                 String stateString = extractCountyString();
+                String userTypeString = extractUserTypeString();
 
                 //no values selected, no need to send
                 if(ageInt == -1 && selectedGender == null && stateString == null){
@@ -162,10 +166,12 @@ public class UserDetailsTab extends TabPage {
                 }
 
                 boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
-                UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString);
+                UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString, userTypeString);
                 introActivity.saveDetailsAndStartProgram(userDetailsValues);
             }
-        });
+        });*/
+
+        startActivity(new Intent(this.getContext(), PrivacyActivity.class));
 
     }
 
@@ -181,11 +187,18 @@ public class UserDetailsTab extends TabPage {
                 : countySpinner.getSelectedItem().toString();
     }
 
+    private String extractUserTypeString(){
+        return userTypeSpinner.getSelectedItemPosition() == 0 //first index is placeholder
+                ? null
+                : userTypeSpinner.getSelectedItem().toString();
+    }
+
     @AllArgsConstructor
     static class UserDetailsValues{
         boolean agreedToParticipate;
         int age;
         User.Gender gender;
         String county;
+        String userType;
     }
 }

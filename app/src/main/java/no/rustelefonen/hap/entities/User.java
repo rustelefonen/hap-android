@@ -43,6 +43,9 @@ public class User implements Parcelable{
     @DatabaseField
     private String county;
 
+    @DatabaseField
+    private String userType;
+
     private List<UserTrigger> resistedTriggers;
     private List<UserTrigger> smokedTriggers;
     private List<UserTrigger> unSavedTriggers;
@@ -116,6 +119,7 @@ public class User implements Parcelable{
                 ", pricePerGram=" + moneySpentPerDayOnHash +
                 ", startDate=" + startDate +
                 ", county='" + county + '\'' +
+                ", userType='" + userType + '\'' +
                 '}';
     }
 
@@ -144,6 +148,7 @@ public class User implements Parcelable{
         out.writeInt(id);
         out.writeInt(age);
         out.writeString(gender != null ? gender.toString() : "");
+        out.writeString(userType != null ? userType : "");
         out.writeDouble(secondsLastedBeforeLastReset);
         out.writeDouble(moneySpentPerDayOnHash);
         out.writeLong(startDate.getTime());
@@ -157,11 +162,13 @@ public class User implements Parcelable{
         setId(in.readInt());
         setAge(in.readInt());
         String genderString = in.readString();
+        String userTypeString = in.readString();
         setGender(genderString.equals("") ? null : Gender.valueOf(genderString));
         setSecondsLastedBeforeLastReset(in.readDouble());
         setMoneySpentPerDayOnHash(in.readDouble());
         setStartDate(new Date(in.readLong()));
         setCounty(in.readString());
+        setUserType(userTypeString);
 
         resistedTriggers = new ArrayList<>();
         in.readList(resistedTriggers, UserTrigger.class.getClassLoader());

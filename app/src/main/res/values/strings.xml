@@ -8,17 +8,19 @@
     <string name="intro_disclaimer_label">Litt Informasjon</string>
     <string name="disclaimer">Denne appen er ment for å hjelpe deg som ønsker å ta en pause fra eller avslutte ditt cannabisbruk. Dersom du selv ikke ønsker å ta en pause/slutte med cannabis er ikke dette appen for deg.\n\nAppen er basert på Uteseksjonen i Oslo sine erfaringer med å gi et tilbud til de som opplever at de sliter med cannabisproblematikk og ønsker hjelp til å slutte med eller redusere bruken.  Innholdet i appen er basert på oppdatert forskning på cannabis/behandling og erfaringsbasert kunnskap fra brukere og fagfolk.  Appens tidsramme strekker seg over åtte uker og er ment som et supplement til HAP. Du trenger derimot ikke å være involvert i dette programmet for å ha nytte av appen.\n\nAppen er utviklet av studenter i samarbeid med RUStelefonen og Uteseksjonen i Oslo kommune, Velferdsetaten. Vi etterstreber en nøytral holdning til ulike problemstillinger rundt cannabisproblematikk. Send oss gjerne en mail dersom du har tilbakemeldinger på appen som vi kan forbedre.</string>
 <!--    <string name="disclaimer">Denne appen er ment for å hjelpe deg som ønsker å ta en pause fra eller avslutte ditt cannabisbruk. Dersom du selv ikke ønsker å ta en pause/slutte med cannabis er ikke dette appen for deg.\n\nAppen er basert på Uteseksjonen i Oslo sine erfaringer med å drive hasjavvenning gjennom mange år, og tar utgangspunkt i hasjavvenningsprogrammet (HAP) utviklet av Thomas Lundqvist og Dan Ericsson. Innholdet i appen er for øvrig basert på oppdatert forskning om cannabis/behandling og erfaringsbasert kunnskap fra både klienter og fagfolk. Appens tidsramme strekker seg over åtte uker og er ment som et supplement til HAP. Du trenger derimot ikke være involvert i dette programmet for å ha nytte av appen.\n\nAppen er utviklet av studenter i samarbeid med RUStelefonen og Uteseksjonen i Oslo kommune, Velferdsetaten. Vi etterstreber en nøytral holdning til ulike problemstillinger rundt cannabisproblematikk. Send oss gjerne en mail dersom du har tilbakemeldinger på appen som vi kan forbedre.</string>-->
+    <string name="privacyMessage">Før du tar appen i bruk vil vi spørre vi deg om alder, kjønn, fylke og om du bruker cannabis, er helsepersonell eller pårørende. Denne informasjonen er frivillig å oppgi, og informasjonen vil bli sendt til en privat passordbeskyttet server hos Rustelefonen. Du vil ikke kunne identifiseres, og informasjonen du oppgir kan ikke knyttes til deg eller din telefon. Hvis du svarer ja til det samtykker du til at vi bruker disse opplysningene i vårt arbeid med å tilpasse våre tjenester best mulig.\n\nOpplysningene vil også bli brukt for å undersøke hvor i Norge appen bli brukt mest, samt fordeling av brukere på kjønn og alder. Grunnen til at det er viktig for oss med en slik oversikt er at vi da kan tilpasse vår markedsføring for å nå publikum. I tillegg ønsker vi å kunne vise oversikt over appens utbredelse i faglige presentasjoner til relevante aktører. Du kan avstå fra å oppgi denne informasjonen og likevel bruke appen som normalt.\n\nAll informasjon du lagrer og legger til i appen vil kun registreres lokalt på din telefon. Informasjonen blir kryptert i henhold til telefonens krypteringsprogram. Kryptering er en matematisk metode som sørger for konfidensialitet ved at informasjon ikke kan leses av uvedkommende (https://www.datatilsynet.no/Sikkerhet-internkontroll/Kryptering/). Alle iOS-telefoner er kryptert så lenge det er satt en kode på telefonen. Kildekoden til appen og datainnsendingen ligger åpen på Github under brukeren Rustelefonen: https://github.com/rustelefonen</string>
     <string name="rustelefonens_webpage_string">RUStelefonens nettside</string>
     <string name="rustlf_url">http://www.rustelefonen.no/</string>
     <string name="uteseksjonens_webpage_label">Uteseksjonens nettside</string>
     <string name="uteseksjonen_url">http://www.uteseksjonen.no/</string>
-    <string name="intro_choose_date">Velg startdato</string>
+    <string name="intro_choose_date">Velg sluttdato</string>
     <string name="help_us">Vil du bidra til å forbedre vårt hjelpetilbud?</string>
     <string name="intro_research_text">Ved å gi noen enkle opplysninger om deg selv bidrar du til at vi kan forbedre vårt hjelpetilbud. Du vil fortsatt være anonym.</string>
     <string name="intro_research_already_participate">Du har allerede bidratt til å forbedre vårt hjelpetilbud. Tusen takk!</string>
     <string name="intro_details_agree_research_label">Jeg ønsker å bidra</string>
     <string name="intro_details_agree_button_text">Start appen nå</string>
     <string name="intro_details_disagree_button_text">Nei takk, start appen nå</string>
+
 
     <!--Navigation bar-->
     <string name="navigation_drawer_open">Åpne hamburgermenyen</string>
@@ -110,6 +112,7 @@
     <string name="age">Alder:</string>
     <string name="gender">Kjønn:</string>
     <string name="county">Fylke:</string>
+    <string name="userType">Brukertype:</string>
     <string name="question">Spørsmål</string>
     <string name="title">Tittel</string>
     <string name="your_question_hint">Ditt spørsmål</string>

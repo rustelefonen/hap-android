@@ -30,6 +30,13 @@
         <item>Østfold</item>
     </string-array>
 
+    <string-array name="userTypes">
+        <item>Velg brukertype</item>
+        <item>Jeg bruker cannabis</item>
+        <item>Jeg er helsepersonell</item>
+        <item>Jeg er pårørende</item>
+    </string-array>
+
     <!-- Database Strings -->
 
     <!-- Achievements -->
