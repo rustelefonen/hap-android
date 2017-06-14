@@ -19,6 +19,7 @@ import android.widget.Switch;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ import static com.google.common.primitives.Ints.tryParse;
 /**
  * Created by martinnikolaisorlie on 11/02/16.
  */
-public class UserDetailsTab extends TabPage {
+public class UserDetailsTab extends TabPage implements Serializable{
     public static final String INTRO_RESEARCH_SENT = "INTRO_RESEARCH_SENT";
 
     @BindView(R.id.user_research_data) LinearLayout researchData;
@@ -170,9 +171,29 @@ public class UserDetailsTab extends TabPage {
                 introActivity.saveDetailsAndStartProgram(userDetailsValues);
             }
         });*/
+        /*Intent intent = new Intent(this.getContext(), PrivacyActivity.class);
+        intent.putExtra(PrivacyActivity.ID, this);
+        startActivity(intent);*/
 
-        startActivity(new Intent(this.getContext(), PrivacyActivity.class));
 
+        actuallyStart();
+
+    }
+
+    public void actuallyStart() {
+        int ageInt = firstNonNull(tryParse(ageSpinner.getSelectedItem().toString()), -1); //first index is placeholder, and will fail parse
+        User.Gender selectedGender = extractGender();
+        String stateString = extractCountyString();
+        String userTypeString = extractUserTypeString();
+
+        //no values selected, no need to send
+        if(ageInt == -1 && selectedGender == null && stateString == null && userTypeString == null){
+            researchSwitch.setChecked(false);
+        }
+
+        boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
+        UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString, userTypeString);
+        introActivity.saveDetailsAndStartProgram(userDetailsValues);
     }
 
     private User.Gender extractGender(){

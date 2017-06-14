@@ -76,9 +76,56 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/survey_card"
+            style="@style/AppTheme.CardViewStyle"
+            android:layout_below="@id/savings_calculator_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_inset"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/survey_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ny undersøkelse!"
+                    android:textColor="@color/primarytext"
+                    android:textSize="@dimen/large_text_size"
+                    android:fontFamily="@string/daily_subject_header_font" />
+
+                <no.rustelefonen.hap.customviews.LazyTextView
+                    android:id="@+id/survey_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/content_inset_half"
+                    android:text=""
+                    android:textSize="@dimen/text_label_size"
+                    android:fontFamily="@string/daily_subject_text_font" />
+
+                <no.rustelefonen.hap.customviews.LazyTextView
+                    android:id="@+id/survey_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="@dimen/standard_text_label"
+                    android:padding="12dp"
+                    android:text="Start Undersøkelse"
+                    android:layout_below="@+id/survey_text"
+                    android:clickable="true"
+                    android:textColor="#007AFF"
+                    android:foreground="?android:selectableItemBackground"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:id="@+id/daily_subject_card"
             style="@style/AppTheme.CardViewStyle"
-            android:layout_below="@id/savings_calculator_card"
+            android:layout_below="@id/survey_card"
             android:layout_marginBottom="@dimen/content_inset_half">
 
             <LinearLayout

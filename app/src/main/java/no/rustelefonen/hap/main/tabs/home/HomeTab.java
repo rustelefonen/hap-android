@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.widget.CardView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +39,9 @@ public class HomeTab extends TabPage {
     @BindView(R.id.clock_view) ClockView clockView;
     @BindView(R.id.daily_subject_text) LazyTextView dailyTask;
     @BindView(R.id.money_saved_label) LazyTextView moneySavedLabel;
+    @BindView(R.id.survey_text) LazyTextView surveyText;
+    @BindView(R.id.survey_card) CardView surveyCard;
+    @BindView(R.id.survey_button) LazyTextView surveyButton;
 
     private MainActivity mainActivity;
     private Handler handler;
@@ -78,6 +82,7 @@ public class HomeTab extends TabPage {
                 updateTimer();
                 updateCalculatorLabel();
                 updateDailyText();
+                displaySurveyCard();
                 handler.postDelayed(this, 1000);
             }
         };
@@ -147,5 +152,20 @@ public class HomeTab extends TabPage {
             mainActivity.setUser((User) data.getExtras().getParcelable(SavingsCalculatorActivity.USER_INFO_EXTRA));
             EventBus.getDefault().post(new AchievementTab.RefreshAchievementListEvent());
         }
+    }
+
+    private void displaySurveyCard() {
+        String secondAndThirdText = "Har du 5 minutter til å svare på en anonym oppfølgingsundersøkelse om app som hjelpetilbud? Undersøkelsen er åpen i 6 dager til.";
+        String firstText = "Har du 10 minutter til å være med på en anonym undersøkelse om app som hjelpetilbud? Undersøkelsen er åpen i 6 dager til.";
+        surveyCard.setVisibility(View.VISIBLE);
+        surveyText.updateText(firstText);
+    }
+
+    @OnClick(R.id.survey_button)
+    public void startSurvey() {
+        Intent intent = new Intent(getContext(), SurveyActivity.class);
+        String url = "https://no.surveymonkey.com/r/VC9RY62";
+        intent.putExtra(SurveyActivity.ID, url);
+        startActivity(intent);
     }
 }

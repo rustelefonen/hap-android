@@ -168,6 +168,17 @@
                 android:value=".intro.IntroActivity" />
         </activity>
 
+        <activity
+            android:screenOrientation="sensorPortrait"
+            android:name=".main.tabs.home.SurveyActivity"
+            android:label="Spørreundersøkelse"
+            android:parentActivityName=".main.tabs.activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".main.tabs.activity.MainActivity" />
+        </activity>
+
         <receiver android:name=".notifications.AchievementReceiver" />
     </application>
 
