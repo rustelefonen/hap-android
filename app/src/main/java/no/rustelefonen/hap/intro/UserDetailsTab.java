@@ -191,6 +191,8 @@ public class UserDetailsTab extends TabPage implements Serializable{
             researchSwitch.setChecked(false);
         }
 
+
+
         boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
         UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString, userTypeString);
         introActivity.saveDetailsAndStartProgram(userDetailsValues);

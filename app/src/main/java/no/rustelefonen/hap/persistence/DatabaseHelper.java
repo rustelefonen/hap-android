@@ -1,6 +1,7 @@
 package no.rustelefonen.hap.persistence;
 
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
@@ -18,7 +19,7 @@ import no.rustelefonen.hap.R;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     public static final String DATABASE_NAME = "hap.db";
-    private static final int DATABASE_VERSION = 150;
+    private static final int DATABASE_VERSION = 153;
     private boolean shouldUpgrade;
     private Context context;
 
@@ -63,9 +64,20 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         shouldUpgrade = true;
-        /*if (oldVersion < 150){
-            db.execSQL("ALTER TABLE 'UserInfo' ADD COLUMN 'UserType' VARCHAR");
-        }*/
+        if (oldVersion < 153){
+            try {
+                db.execSQL("ALTER TABLE 'User' ADD COLUMN 'userType' VARCHAR");
+
+                db.execSQL("ALTER TABLE 'User' ADD COLUMN 'appRegistered' DOUBLE PRECISION");
+                db.execSQL("ALTER TABLE 'User' ADD COLUMN 'surveyRegistered' DOUBLE PRECISION");
+                db.execSQL("ALTER TABLE 'User' ADD COLUMN 'secondSurveyRegistered' DOUBLE PRECISION");
+                db.execSQL("ALTER TABLE 'User' ADD COLUMN 'thirdSurveyRegistered' DOUBLE PRECISION");
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
         /*try {
             Log.i(DatabaseHelper.class.getName(), "onUpgrade");
             TableUtils.dropTable(connectionSource, Achievement.class, true);

@@ -8,6 +8,7 @@ import android.util.Log;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,8 +72,10 @@ public class IntroActivity extends OrmLiteActivity {
             user.setUserType(userDetailsValues.userType);
             submitResearchData(user);
         }
+        user.setAppRegistered(new Date());
 
         user.setStartDate(getStartDateWithTimeAdjusted().getTime());
+
         new UserDao(this).persist(user);
 
         AchievementScheduler achievementScheduler = new AchievementScheduler(this);

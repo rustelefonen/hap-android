@@ -1,5 +1,5 @@
 #
-# generated on 2016/05/06 10:18:49
+# generated on 2017/06/15 10:18:48
 #
 # --table-start--
 dataClass=no.rustelefonen.hap.entities.Achievement
@@ -105,6 +105,21 @@ canBeNull=false
 # --field-end--
 # --field-start--
 fieldName=county
+# --field-end--
+# --field-start--
+fieldName=userType
+# --field-end--
+# --field-start--
+fieldName=appRegistered
+# --field-end--
+# --field-start--
+fieldName=surveyRegistered
+# --field-end--
+# --field-start--
+fieldName=secondSurveyRegistered
+# --field-end--
+# --field-start--
+fieldName=thirdSurveyRegistered
 # --field-end--
 # --table-fields-end--
 # --table-end--

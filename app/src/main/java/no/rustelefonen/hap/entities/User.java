@@ -46,6 +46,18 @@ public class User implements Parcelable{
     @DatabaseField
     private String userType;
 
+    @DatabaseField
+    private Date appRegistered;
+
+    @DatabaseField
+    private Date surveyRegistered;
+
+    @DatabaseField
+    private Date secondSurveyRegistered;
+
+    @DatabaseField
+    private Date thirdSurveyRegistered;
+
     private List<UserTrigger> resistedTriggers;
     private List<UserTrigger> smokedTriggers;
     private List<UserTrigger> unSavedTriggers;
@@ -120,6 +132,10 @@ public class User implements Parcelable{
                 ", startDate=" + startDate +
                 ", county='" + county + '\'' +
                 ", userType='" + userType + '\'' +
+                ", appRegistered=" + appRegistered +
+                ", surveyRegistered=" + surveyRegistered +
+                ", secondSurveyRegistered=" + secondSurveyRegistered +
+                ", thirdSurveyRegistered=" + thirdSurveyRegistered +
                 '}';
     }
 
@@ -152,6 +168,10 @@ public class User implements Parcelable{
         out.writeDouble(secondsLastedBeforeLastReset);
         out.writeDouble(moneySpentPerDayOnHash);
         out.writeLong(startDate.getTime());
+        out.writeLong(appRegistered != null ? appRegistered.getTime() : 0);
+        out.writeLong(surveyRegistered != null ? surveyRegistered.getTime() : 0);
+        out.writeLong(secondSurveyRegistered != null ? secondSurveyRegistered.getTime() : 0);
+        out.writeLong(thirdSurveyRegistered != null ? thirdSurveyRegistered.getTime() : 0);
         out.writeString(county);
         out.writeList(resistedTriggers);
         out.writeList(smokedTriggers);
@@ -167,6 +187,10 @@ public class User implements Parcelable{
         setSecondsLastedBeforeLastReset(in.readDouble());
         setMoneySpentPerDayOnHash(in.readDouble());
         setStartDate(new Date(in.readLong()));
+        setAppRegistered(new Date(in.readLong()));
+        setSurveyRegistered(new Date(in.readLong()));
+        setSecondSurveyRegistered(new Date(in.readLong()));
+        setThirdSurveyRegistered(new Date(in.readLong()));
         setCounty(in.readString());
         setUserType(userTypeString);
 
