@@ -1,12 +1,18 @@
 package no.rustelefonen.hap.main.tabs.home;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,9 +32,13 @@ import butterknife.Unbinder;
 import no.rustelefonen.hap.R;
 import no.rustelefonen.hap.customviews.LazyTextView;
 import no.rustelefonen.hap.customviews.clock.ClockView;
+import no.rustelefonen.hap.entities.Achievement;
 import no.rustelefonen.hap.entities.User;
 import no.rustelefonen.hap.main.tabs.achievements.AchievementTab;
 import no.rustelefonen.hap.main.tabs.activity.MainActivity;
+import no.rustelefonen.hap.notifications.AchievementReceiver;
+import no.rustelefonen.hap.notifications.SurveyReceiver;
+import no.rustelefonen.hap.persistence.dao.AchievementDao;
 import no.rustelefonen.hap.persistence.dao.UserDao;
 import no.rustelefonen.hap.tabs.misc.TabPage;
 
@@ -188,8 +198,6 @@ public class HomeTab extends TabPage {
                     updateSurveyText(firstSurveyEnd, true);
                 }
                 else surveyCard.setVisibility(View.GONE);
-                //IF USERDEFAULTS
-
             }
             else surveyCard.setVisibility(View.GONE);
             return;
@@ -274,9 +282,13 @@ public class HomeTab extends TabPage {
         User user = mainActivity.getUser();
         if (user == null || dailyTask == null) return;
 
-        //UserDao userDao = new UserDao(getActivity());
+        UserDao userDao = new UserDao(mainActivity);
 
         String url = "";
+
+        String[] surveys = new String[]{"https://no.surveymonkey.com/r/VC9RY62", "https://no.surveymonkey.com/r/2RZ29SM", "https://no.surveymonkey.com/r/SGKKT2R"};
+        String[] surveyAchievementTitles = new String[] {"Første undersøkelse utført!", "Andre undersøkelse utført!", "Tredje undersøkelse utført!"};
+        String[] surveyAchievmentInfos = new String[]{"Første undersøkelse gjennomført, takk for at du deltok!", "Andre undersøkelse gjennomført, takk for at du deltok!", "Tredje undersøkelse gjennomført, takk for at du deltok!"};
 
         int currentSurvey = getCurrentSurvey();
         if (currentSurvey == 0 && user.getSurveyRegistered() == null) {
@@ -285,19 +297,32 @@ public class HomeTab extends TabPage {
 
             if (hasRegisteredFirstSurvey) return;
 
-            //new achievement
-            //new notifications
-            user.setSurveyRegistered(new Date());
-            //userDao save
-            //Init user
-            url =  "https://no.surveymonkey.com/r/VC9RY62";
+            Date now = new Date();
+
+            createNewSurveyAchievement(surveyAchievementTitles[currentSurvey], surveyAchievmentInfos[currentSurvey]);
+            scheduleSurveyNotifications(now);
+
+            user.setSurveyRegistered(now);
+            userDao.persist(user);
+            mainActivity.refreshUser();
+            url = surveys[currentSurvey];
+
+            sharedPreferences.edit().putBoolean("hasRegisteredFirstSurvey", true).apply();
 
         }
         else if (currentSurvey == 1 && user.getSurveyRegistered() != null && user.getSecondSurveyRegistered() == null) {
-
+            createNewSurveyAchievement(surveyAchievementTitles[currentSurvey], surveyAchievmentInfos[currentSurvey]);
+            user.setSurveyRegistered(new Date());
+            userDao.persist(user);
+            mainActivity.refreshUser();
+            url = surveys[currentSurvey];
         }
         else if (currentSurvey == 2 && user.getSurveyRegistered() != null && user.getThirdSurveyRegistered() == null) {
-
+            createNewSurveyAchievement(surveyAchievementTitles[currentSurvey], surveyAchievmentInfos[currentSurvey]);
+            user.setSurveyRegistered(new Date());
+            userDao.persist(user);
+            mainActivity.refreshUser();
+            url =  surveys[currentSurvey];
         }
 
         Intent intent = new Intent(getContext(), SurveyActivity.class);
@@ -305,29 +330,43 @@ public class HomeTab extends TabPage {
         startActivity(intent);
     }
 
-    /*func createNewSurveyAchievement(title:String, info:String) {
-        let achievementDao = AchievementDao()
-        let firstAchievement = achievementDao.createNewAchievement()
-        firstAchievement.title = title
-        firstAchievement.info = info
-        firstAchievement.pointsRequired = 1
-        firstAchievement.category = Achievement.Category.Milestone.rawValue
-        achievementDao.save()
-        SwiftEventBus.post(AchievementsTableController.RELOAD_ACHIEVEMENTS_EVENT)
+    private void createNewSurveyAchievement(String title, String info) {
+        AchievementDao achievementDao = new AchievementDao(mainActivity);
+        Achievement achievement = new Achievement();
+        achievement.setTitle(title);
+        achievement.setDescription(info);
+        achievement.setPointsRequired(1);
+        achievement.setType(Achievement.Type.MILESTONE);
+        achievementDao.persist(achievement);
+
+        EventBus.getDefault().post(new AchievementTab.RefreshAchievementListEvent());
     }
 
-    func scheduleSurveyNotifications() {
-        let notificationTitle = "Ny undersøkelse!"
-        let now = Date()
-        let secondDate = Calendar.current.date(byAdding: .day, value: 56, to: now)!
-                let thirdDate = Calendar.current.date(byAdding: .day, value: 280, to: now)!
+    private void scheduleSurveyNotifications(Date date) {
+        Date secondDate = addDaysTo(date, 56);
+        Date thirdDate = addDaysTo(date, 280);
 
-                var badgeNumber = UIApplication.shared.applicationIconBadgeNumber
-        badgeNumber += 1
-        NotificationHandler.scheduleNotification(secondDate, alertBody: notificationTitle, badgeNumber: badgeNumber)
-        badgeNumber += 1
-        NotificationHandler.scheduleNotification(thirdDate, alertBody: notificationTitle, badgeNumber: badgeNumber)
-    }*/
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(secondDate);
+        cal.add(Calendar.SECOND, 20);
+        thirdDate = cal.getTime();
+
+        AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
+
+        makeNotification(secondDate, alarmManager, 17541651);
+        makeNotification(thirdDate, alarmManager, 17541652);
+    }
+
+    private void makeNotification(Date date, AlarmManager alarmManager, int id) {
+        Intent notificationIntent = new Intent(getContext(), SurveyReceiver.class);
+        //notificationIntent.putExtra(AchievementReceiver.NOTIFICATION, makeNotificationOf());
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), id, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+            alarmManager.setExact(AlarmManager.RTC, date.getTime(), pendingIntent); //Battery use increase :/
+        else alarmManager.set(AlarmManager.RTC, date.getTime(), pendingIntent);
+    }
 
     private int getCurrentSurvey() {
         User user = mainActivity.getUser();

@@ -180,6 +180,7 @@
         </activity>
 
         <receiver android:name=".notifications.AchievementReceiver" />
+        <receiver android:name=".notifications.SurveyReceiver" />
     </application>
 
 </manifest>

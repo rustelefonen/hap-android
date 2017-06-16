@@ -2,14 +2,12 @@ package no.rustelefonen.hap.main.tabs.home;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.webkit.WebView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import no.rustelefonen.hap.R;
-import no.rustelefonen.hap.entities.User;
 import no.rustelefonen.hap.persistence.OrmLiteActivity;
 import no.rustelefonen.hap.util.DialogHelper;
 
@@ -35,7 +33,7 @@ public class SurveyActivity extends OrmLiteActivity {
         webView.getSettings().setJavaScriptEnabled(true);
 
         String url = getIntent().getStringExtra(ID);
-        if (!url.isEmpty() && url != null) webView.loadUrl(url);
+        if (url != null && !url.isEmpty()) webView.loadUrl(url);
     }
 
     @Override
@@ -46,7 +44,6 @@ public class SurveyActivity extends OrmLiteActivity {
 
     @Override
     public void onBackPressed() {
-        System.out.println("kek");
         String dialogTitle = "Er du sikker på at du vil gå tilbake?";
         String dialogInfo = "Hvis du går tilbake uten å ha fullført undersøkelsen, vil du ikke kunne svare på denne undersøkelsen igjen.";
         DialogHelper.showConfirmDialogWithAction(this, dialogTitle, dialogInfo, "Gå tilbake", new DialogInterface.OnClickListener() {

@@ -167,4 +167,8 @@ public class MainActivity extends OrmLiteActivity {
     public void scrollToProgramTab(ProgramTab.TriggerAddedEvent event) {
         viewPager.setCurrentItem(swipePageAdapter.getPositionFor(ProgramTab.class));
     }
+
+    public void refreshUser() {
+        user = new UserDao(this).getFirst();
+    }
 }
