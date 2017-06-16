@@ -346,11 +346,6 @@ public class HomeTab extends TabPage {
         Date secondDate = addDaysTo(date, 56);
         Date thirdDate = addDaysTo(date, 280);
 
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(secondDate);
-        cal.add(Calendar.SECOND, 20);
-        thirdDate = cal.getTime();
-
         AlarmManager alarmManager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
 
         makeNotification(secondDate, alarmManager, 17541651);

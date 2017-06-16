@@ -176,7 +176,42 @@ public class UserDetailsTab extends TabPage implements Serializable{
         startActivity(intent);*/
 
 
-        actuallyStart();
+        //actuallyStart();
+
+        Intent intent = new Intent(this.getContext(), PrivacyActivity.class);
+
+        PrivacyPojo privacyPojo = new PrivacyPojo();
+
+
+        int ageInt = firstNonNull(tryParse(ageSpinner.getSelectedItem().toString()), -1); //first index is placeholder, and will fail parse
+        privacyPojo.setAge(ageInt);
+        User.Gender selectedGender = extractGender();
+        privacyPojo.setGender(selectedGender);
+        String stateString = extractCountyString();
+        privacyPojo.setCounty(stateString);
+        String userTypeString = extractUserTypeString();
+        privacyPojo.setUserType(userTypeString);
+        privacyPojo.setStartDate(introActivity.getStartDate());
+
+
+        boolean agreedToParticipate = researchSwitch.isChecked() && !alreadyParticipated;
+        privacyPojo.setAgreedToParticipate(agreedToParticipate);
+
+        //no values selected, no need to send
+        if(ageInt == -1 && selectedGender == null && stateString == null && userTypeString == null){
+            //researchSwitch.setChecked(false);
+            privacyPojo.setAgreedToParticipate(false);
+        }
+
+
+
+        /*
+        UserDetailsValues userDetailsValues = new UserDetailsValues(agreedToParticipate, ageInt, selectedGender, stateString, userTypeString);
+        introActivity.saveDetailsAndStartProgram(userDetailsValues);*/
+
+
+        intent.putExtra(PrivacyActivity.ID, privacyPojo);
+        startActivity(intent);
 
     }
 
